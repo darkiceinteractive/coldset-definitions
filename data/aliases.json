@@ -1,0 +1,12 @@
+{
+  "default": "Clears any model override and goes back to the default model for your account.",
+  "best": "Same model as opus.",
+  "fable": "Fable, for the hardest and longest-running work.",
+  "opus": "The newest Opus, for complex reasoning.",
+  "sonnet": "The newest Sonnet, for everyday coding.",
+  "haiku": "Haiku, fast and cheap, for simple tasks.",
+  "opus[1m]": "Opus with a one million token context window.",
+  "sonnet[1m]": "Sonnet with a one million token context window.",
+  "opusplan": "Opus while planning, then Sonnet to carry the plan out.",
+  "inherit": "Subagents only: use the same model as the main conversation."
+}

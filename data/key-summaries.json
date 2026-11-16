@@ -1,0 +1,338 @@
+{
+ "allowClaudeInChromeWithManagedMcp": {
+  "summary": "Allows the Claude in Chrome server to run together with a deployed managed-mcp.json."
+ },
+ "allowedProviders": {
+  "summary": "Restricts which API providers a machine can use."
+ },
+ "appendPlugins": {
+  "summary": "Runs your organisation's mods after each mod a user installs."
+ },
+ "attribution.commit": {
+  "summary": "Modifies or removes the commit trailer that Claude Code appends."
+ },
+ "attribution.pr": {
+  "summary": "Alters or removes the credit line shown in pull request descriptions."
+ },
+ "attribution.sessionUrl": {
+  "summary": "Leave out the claude.ai session link in cloud plus Remote Control commits."
+ },
+ "autoCompactWindow": {
+  "summary": "Sets the context fullness threshold before Claude Code compacts."
+ },
+ "autoContinueAtUsageLimit": {
+  "summary": "Keep the session open and resume the task automatically when the claude.ai usage cap resets."
+ },
+ "autoMode.classifyAllShell": {
+  "summary": "Sends all shell commands through the auto mode classifier, including those matched by a narrow allow rule."
+ },
+ "availableModelsMatch": {
+  "summary": "Makes each availableModels model ID entry allow only the version it specifies."
+ },
+ "bashEditDiffEnabled": {
+  "summary": "Logs which files changed during a Bash command in all permission modes."
+ },
+ "bashOutputMaxChars": {
+  "summary": "Set the maximum characters of output from a successful command that Claude gets inline."
+ },
+ "claudeInChromeDefaultEnabled": {
+  "summary": "Turns on Chrome integration when a session begins in both the interactive CLI and VS Code extension."
+ },
+ "copyFullResponse": {
+  "summary": "Makes /copy copy the entire response without displaying the picker."
+ },
+ "copyOnSelect": {
+  "summary": "Disables automatic copying of mouse-selected text in fullscreen rendering and agent view."
+ },
+ "crossSessionInbound": {
+  "summary": "Decides whether Claude Code delivers other-session messages, just shows a notice, or refuses them."
+ },
+ "defaultToAgentsView": {
+  "summary": "When you run claude without arguments, open agent view rather than a new conversation."
+ },
+ "deniedModels": {
+  "summary": "Blocks specific models even if availableModels allows them."
+ },
+ "desktopSessionCleanupPeriodDays": {
+  "summary": "Sets how many days before transcripts from Claude Desktop and Cowork are cleaned up."
+ },
+ "dialogExpiry": {
+  "summary": "Controls the timeout for Claude Code to receive a reply from a Remote Control or SDK host about a forwarded dialog, after which it cancels."
+ },
+ "disableCommandPluginSources": {
+  "summary": "Blocks plugins that install by running a command declared by a marketplace."
+ },
+ "disableDesktopLocalSessions": {
+  "summary": "Disables Desktop Code sessions running on the device, leaving SSH for other hosts and cloud."
+ },
+ "disableRemotePreviewScripts": {
+  "summary": "Disables scripts in the desktop app's HTML previews for SSH and WSL sessions."
+ },
+ "enableWorkflows": {
+  "summary": "Enables or disables dynamic workflows, overriding your plan's default."
+ },
+ "feedbackDrafts": {
+  "summary": "Controls whether Claude queues feedback drafts for your review."
+ },
+ "gatewayInternalNetworks": {
+  "summary": "Allows /login to reach a cloud gateway on public IPv4 addresses your organisation uses internally."
+ },
+ "idleCompaction": {
+  "summary": "Prevents Claude Code from compacting lengthy conversations after you step away."
+ },
+ "isolatePeerMachines": {
+  "summary": "Asks for your approval before Claude messages your session on another machine."
+ },
+ "keybindingFlavor": {
+  "summary": "Obsolete and does nothing; word-editing shortcuts always use readline conventions."
+ },
+ "leftArrowOpensAgents": {
+  "summary": "Disables the ← shortcut that sends the session to background and opens agent view."
+ },
+ "managedSourcesBehavior": {
+  "summary": "Combine all managed sources you deploy rather than using only the highest-priority one."
+ },
+ "maxEffortLevel": {
+  "summary": "Set a maximum effort level for all models or individual models across any provider."
+ },
+ "maxProseWidth": {
+  "summary": "Limit how wide Claude's response prose runs in a wide terminal."
+ },
+ "modelPicker": {
+  "summary": "Choose the models for the `/model` picker, with your own order and labels."
+ },
+ "modelPricing": {
+  "summary": "Show spending using your organisation's contracted rates rather than list prices."
+ },
+ "modelSettings": {
+  "summary": "Store an effort setting or auto-compact window for each model, or limit one model's effort."
+ },
+ "permissions.additionalDirectories": {
+  "summary": "Let Claude access files outside the current directory."
+ },
+ "permissions.allow": {
+  "summary": "Approve the listed tool uses without asking for confirmation."
+ },
+ "permissions.ask": {
+  "summary": "Always ask for confirmation before the listed tool uses."
+ },
+ "permissions.blockReadsOutsideWorkingDirectories": {
+  "summary": "Make file tools reject reads outside the working directories in all permission modes."
+ },
+ "permissions.blockWritesOutsideWorkingDirectories": {
+  "summary": "Make `Write`, `Edit`, and `NotebookEdit` reject paths beyond the working directories in all permission modes, except certain Claude Code files."
+ },
+ "permissions.defaultMode": {
+  "summary": "Choose the default permission mode used for new sessions."
+ },
+ "permissions.deny": {
+  "summary": "Block the listed tool uses, including reads of files containing secrets."
+ },
+ "permissions.denyInsteadOfPrompting": {
+  "summary": "Block tool calls that would wait for a permission prompt, so an unattended session keeps working."
+ },
+ "permissions.disableBypassPermissionsMode": {
+  "summary": "Stop anyone entering bypassPermissions mode."
+ },
+ "policyHelper.path": {
+  "summary": "Specify the helper executable that Claude Code runs."
+ },
+ "policyHelper.refreshIntervalMs": {
+  "summary": "Run a helper again in the background at a set interval."
+ },
+ "policyHelper.timeoutMs": {
+  "summary": "Set the time Claude Code allows for the helper."
+ },
+ "prStatusFooterEnabled": {
+  "summary": "Disable the PR review status badge in the prompt footer and its pull request check."
+ },
+ "prependPlugins": {
+  "summary": "Run your organisation's mods ahead of every user-installed mod."
+ },
+ "promptCacheTtl": {
+  "summary": "Set the prompt cache lifetime used for the main conversation."
+ },
+ "promptSuggestionEnabled": {
+  "summary": "Hide the greyed-out prompt suggestions within the input box."
+ },
+ "remote.defaultEnvironmentId": {
+  "summary": "Choose the default cloud environment used by claude --cloud. For a self-hosted ccpool_ ID, only user settings, managed settings, and --settings are read."
+ },
+ "sandbox.allowAppleEvents": {
+  "summary": "Allow sandboxed commands to send Apple Events on macOS."
+ },
+ "sandbox.allowNestedUserNamespaces": {
+  "summary": "Allow sandboxed commands to make user namespaces in Linux and WSL2."
+ },
+ "sandbox.allowUnsandboxedCommands": {
+  "summary": "Allow Claude to run a blocked command again outside the sandbox, or forbid that."
+ },
+ "sandbox.autoAllowBashIfSandboxed": {
+  "summary": "Run sandboxed commands without asking for permission."
+ },
+ "sandbox.bwrapPath": {
+  "summary": "Point the sandbox to a bubblewrap binary outside `PATH`."
+ },
+ "sandbox.credentials": {
+  "summary": "Conceal or obscure credential files and variables within the sandbox."
+ },
+ "sandbox.credentials.allowPlaintextInject": {
+  "summary": "Permits masked credentials to be injected into plain HTTP services on test networks you trust."
+ },
+ "sandbox.credentials.awsPairs": {
+  "summary": "Combine custom AWS key variables into a single credential used when re-signing AWS requests."
+ },
+ "sandbox.credentials.envVars": {
+  "summary": "Remove or hide an environment variable within the sandbox."
+ },
+ "sandbox.credentials.files": {
+  "summary": "Prevent or conceal reads of a credential file within the sandbox."
+ },
+ "sandbox.credentials.sigv4": {
+  "summary": "Decide if AWS requests using streaming, presigned, or SigV4A are blocked or allowed through."
+ },
+ "sandbox.enableWeakerNestedSandbox": {
+  "summary": "Allow the Linux sandbox to run within an unprivileged container."
+ },
+ "sandbox.enableWeakerNetworkIsolation": {
+  "summary": "Enable gh, gcloud, and terraform to check TLS through a MITM proxy in the macOS sandbox."
+ },
+ "sandbox.enabled": {
+  "summary": "Enable Bash sandboxing for macOS, Linux, and WSL2."
+ },
+ "sandbox.excludedCommands": {
+  "summary": "List commands that Claude Code may run outside the sandbox."
+ },
+ "sandbox.failIfUnavailable": {
+  "summary": "Stop startup if the sandbox is unavailable rather than running unsandboxed, except on Anthropic-hosted systems."
+ },
+ "sandbox.filesystem": {
+  "summary": "Manage the paths that sandboxed commands may read from and write to."
+ },
+ "sandbox.filesystem.allowManagedReadPathsOnly": {
+  "summary": "Prevent developers from reopening read paths that your organisation blocked."
+ },
+ "sandbox.filesystem.allowRead": {
+  "summary": "Allow reading again within an area that denyRead blocks."
+ },
+ "sandbox.filesystem.allowWrite": {
+  "summary": "Specify additional paths where sandboxed commands may write."
+ },
+ "sandbox.filesystem.denyRead": {
+  "summary": "Prevent sandboxed commands from reading particular paths."
+ },
+ "sandbox.filesystem.denyWrite": {
+  "summary": "Prevent sandboxed commands from writing to particular paths."
+ },
+ "sandbox.filesystem.disabled": {
+  "summary": "Disable filesystem isolation but keep network isolation active."
+ },
+ "sandbox.ignoreViolations": {
+  "summary": "Suppress violation reports for paths that a command is likely to check."
+ },
+ "sandbox.network": {
+  "summary": "Manage the hosts, ports, and sockets that sandboxed commands can access."
+ },
+ "sandbox.network.allowAllUnixSockets": {
+  "summary": "Permit sandboxed commands to connect to all Unix sockets."
+ },
+ "sandbox.network.allowLocalBinding": {
+  "summary": "Allow sandboxed commands on macOS to listen on ports and connect to localhost."
+ },
+ "sandbox.network.allowMachLookup": {
+  "summary": "Allow macOS sandboxed tools such as iOS Simulator or Playwright to access their XPC services."
+ },
+ "sandbox.network.allowManagedDomainsOnly": {
+  "summary": "Restrict the network allowlist to only managed settings."
+ },
+ "sandbox.network.allowUnixSockets": {
+  "summary": "Specify Unix socket paths that sandboxed commands may use on macOS."
+ },
+ "sandbox.network.allowedDomains": {
+  "summary": "Pre-approve domains so sandboxed commands do not prompt for them."
+ },
+ "sandbox.network.deniedDomains": {
+  "summary": "Deny domains for sandboxed commands even if an allowed wildcard covers them."
+ },
+ "sandbox.network.httpProxyPort": {
+  "summary": "Send sandbox HTTP traffic through a custom proxy on this port."
+ },
+ "sandbox.network.socksProxyPort": {
+  "summary": "Send sandbox SOCKS traffic through a custom proxy on this port."
+ },
+ "sandbox.network.strictAllowlist": {
+  "summary": "Deny hosts not on the allowlist rather than prompting."
+ },
+ "sandbox.network.tlsTerminate": {
+  "summary": "Make the sandbox proxy end TLS so it can inspect HTTPS requests."
+ },
+ "sandbox.ripgrep": {
+  "summary": "Use a custom ripgrep binary within the sandbox."
+ },
+ "sandbox.socatPath": {
+  "summary": "Set the sandbox proxy to use a socat executable found outside PATH."
+ },
+ "skipAutoPermissionPrompt": {
+  "summary": "Skip the initial notice when you enter auto mode yourself instead of through the built-in default."
+ },
+ "spellcheck": {
+  "summary": "Mark typos in the prompt box with a spell checker you install."
+ },
+ "sshHostCommands": {
+  "summary": "Include SSH connections in the Desktop environment selector when the host is from a command."
+ },
+ "strictPluginOnlyCustomization.agents": {
+  "summary": "Stop agents coming from user or project sources."
+ },
+ "strictPluginOnlyCustomization.hooks": {
+  "summary": "Stop hooks coming from user or project sources."
+ },
+ "strictPluginOnlyCustomization.mcp": {
+  "summary": "Stop MCP servers coming from user or project sources."
+ },
+ "strictPluginOnlyCustomization.skills": {
+  "summary": "Stop skills coming from user or project sources."
+ },
+ "subagentPromptCacheTtl": {
+  "summary": "Set the prompt cache lifetime for subagents plus other requests beyond the main conversation."
+ },
+ "switchModelsOnFlag": {
+  "summary": "Change models automatically or halt when a safety classifier raises a flag."
+ },
+ "syncClaudeAiPlugins": {
+  "summary": "Halt loading of plugins that your claude.ai account has enabled and cease downloading new ones."
+ },
+ "syncClaudeAiSkills": {
+  "summary": "Halt loading of skills that your claude.ai account has enabled and cease downloading new ones."
+ },
+ "taskOutputMaxChars": {
+  "summary": "Removed in v2.1.277 along with the TaskOutput tool it sized."
+ },
+ "terminalTitleFromRename": {
+  "summary": "Prevent /rename and --name from altering the terminal tab title."
+ },
+ "timeFormat": {
+  "summary": "Display interface times as 12-hour or 24-hour, in UTC, or using a strftime pattern."
+ },
+ "timeZone": {
+  "summary": "Display interface times using a time zone that differs from your system's."
+ },
+ "ultracode": {
+  "summary": "Let Claude design a workflow for every substantive task without being prompted."
+ },
+ "worktree.baseRef": {
+  "summary": "Create new worktrees from either the default remote branch or your local HEAD."
+ },
+ "worktree.bgIsolation": {
+  "summary": "Allow background sessions to modify the working copy with no worktree."
+ },
+ "worktree.location": {
+  "summary": "Pick the remote machine location where Desktop SSH sessions put their worktrees."
+ },
+ "worktree.sparsePaths": {
+  "summary": "In each worktree, check out just the directories you need."
+ },
+ "worktree.symlinkDirectories": {
+  "summary": "Instead of duplicating large directories, symlink them into each worktree."
+ }
+}

@@ -1,0 +1,1626 @@
+{
+ "ANTHROPIC_API_KEY": {
+  "kind": "string",
+  "summary": "API key sent in the X-Api-Key header. It overrides a logged-in subscription, with a one-off approval prompt in interactive mode. Run unset to go back to the subscription."
+ },
+ "ANTHROPIC_AUTH_TOKEN": {
+  "kind": "string",
+  "summary": "Custom Authorization header value. Claude Code adds the Bearer prefix itself."
+ },
+ "ANTHROPIC_AWS_API_KEY": {
+  "kind": "string",
+  "summary": "A workspace key made in the AWS Console for Claude Platform on AWS. It goes out in the x-api-key header and beats AWS SigV4 signing."
+ },
+ "ANTHROPIC_AWS_BASE_URL": {
+  "kind": "url",
+  "summary": "Overrides the Claude Platform on AWS endpoint, for custom regions or an LLM gateway. Defaults to the regional aws-external-anthropic address."
+ },
+ "ANTHROPIC_AWS_WORKSPACE_ID": {
+  "kind": "string",
+  "summary": "Workspace ID that Claude Platform on AWS requires. Sent with every request in the anthropic-workspace-id header."
+ },
+ "ANTHROPIC_BASE_URL": {
+  "kind": "url",
+  "summary": "Overrides the API endpoint so requests go through a proxy or gateway. From v2.1.196, Remote Control is disabled when the host is not api.anthropic.com."
+ },
+ "ANTHROPIC_BEDROCK_BASE_URL": {
+  "kind": "url",
+  "summary": "Overrides the Amazon Bedrock endpoint, for custom endpoints or an LLM gateway."
+ },
+ "ANTHROPIC_BEDROCK_MANTLE_BASE_URL": {
+  "kind": "url",
+  "summary": "Points Claude Code at a different Amazon Bedrock Mantle endpoint URL."
+ },
+ "ANTHROPIC_BEDROCK_REGION_PREFIX": {
+  "kind": "string",
+  "summary": "Cross-region inference profile prefix to try first: us, eu, apac, jp, au or global. Replaces the prefix derived from the AWS region. Ignored in GovCloud. Needs v2.1.224+."
+ },
+ "ANTHROPIC_BEDROCK_SERVICE_TIER": {
+  "kind": "string",
+  "summary": "Amazon Bedrock service tier to request: default, flex or priority."
+ },
+ "ANTHROPIC_BETAS": {
+  "kind": "list",
+  "summary": "Comma-separated extra anthropic-beta header values to send. Lets you try an API beta early. Unlike the --betas flag, it works with every auth method."
+ },
+ "ANTHROPIC_CUSTOM_HEADERS": {
+  "kind": "string",
+  "summary": "Extra request headers in Name: Value form, one per line. Characters that headers cannot carry make the request fail. Needs v2.1.227+. Credential or routing headers may need approval."
+ },
+ "ANTHROPIC_CUSTOM_MODEL_OPTION": {
+  "kind": "model",
+  "summary": "Model ID added as an extra entry in the /model picker. Makes a gateway-specific or unusual model selectable while keeping the built-in aliases."
+ },
+ "ANTHROPIC_CUSTOM_MODEL_OPTION_DESCRIPTION": {
+  "kind": "string",
+  "summary": "Description shown for the custom /model picker entry. Defaults to Custom model followed by the model ID."
+ },
+ "ANTHROPIC_CUSTOM_MODEL_OPTION_NAME": {
+  "kind": "string",
+  "summary": "Label for the custom /model picker entry. Falls back to the model's known name, or else the raw model ID."
+ },
+ "ANTHROPIC_CUSTOM_MODEL_OPTION_SUPPORTED_CAPABILITIES": {
+  "kind": "list",
+  "summary": "Lists, separated by commas, what the custom model can do, such as effort,thinking."
+ },
+ "ANTHROPIC_DEFAULT_FABLE_MODEL": {
+  "kind": "model",
+  "summary": "Model ID the fable alias resolves to. Also marks which ID counts as a Fable model for automatic fallback on third-party providers."
+ },
+ "ANTHROPIC_DEFAULT_FABLE_MODEL_DESCRIPTION": {
+  "kind": "string",
+  "summary": "Description shown for the pinned Fable model in the /model picker. The default begins with Custom Fable model."
+ },
+ "ANTHROPIC_DEFAULT_FABLE_MODEL_NAME": {
+  "kind": "string",
+  "summary": "Label for the pinned Fable model in the /model picker. Defaults to the recognised model name, otherwise the pinned ID."
+ },
+ "ANTHROPIC_DEFAULT_FABLE_MODEL_SUPPORTED_CAPABILITIES": {
+  "kind": "list",
+  "summary": "Lists, separated by commas, what the pinned Fable model can do, such as effort,thinking."
+ },
+ "ANTHROPIC_DEFAULT_HAIKU_MODEL": {
+  "kind": "model",
+  "summary": "The model ID that the haiku alias maps to. Background tasks use it too."
+ },
+ "ANTHROPIC_DEFAULT_HAIKU_MODEL_DESCRIPTION": {
+  "kind": "string",
+  "summary": "Description shown for the pinned Haiku model in the /model picker. The default begins with Custom Haiku model."
+ },
+ "ANTHROPIC_DEFAULT_HAIKU_MODEL_NAME": {
+  "kind": "string",
+  "summary": "Label for the pinned Haiku model in the /model picker. Defaults to the recognised model name, otherwise the pinned ID."
+ },
+ "ANTHROPIC_DEFAULT_HAIKU_MODEL_SUPPORTED_CAPABILITIES": {
+  "kind": "list",
+  "summary": "Lists, separated by commas, what the pinned Haiku model can do, such as effort,thinking."
+ },
+ "ANTHROPIC_DEFAULT_MODEL": {
+  "kind": "model",
+  "summary": "Model that new sessions start on. Needs Claude Code v2.1.236 or later."
+ },
+ "ANTHROPIC_DEFAULT_OPUS_MODEL": {
+  "kind": "model",
+  "summary": "Model ID the opus alias resolves to. The opusplan alias also uses it while Plan Mode is active."
+ },
+ "ANTHROPIC_DEFAULT_OPUS_MODEL_DESCRIPTION": {
+  "kind": "string",
+  "summary": "Description shown for the pinned Opus model in the /model picker. The default begins with Custom Opus model."
+ },
+ "ANTHROPIC_DEFAULT_OPUS_MODEL_NAME": {
+  "kind": "string",
+  "summary": "Label for the pinned Opus model in the /model picker. Defaults to the recognised model name, otherwise the pinned ID."
+ },
+ "ANTHROPIC_DEFAULT_OPUS_MODEL_SUPPORTED_CAPABILITIES": {
+  "kind": "list",
+  "summary": "Lists, separated by commas, what the pinned Opus model can do, such as effort,thinking."
+ },
+ "ANTHROPIC_DEFAULT_SONNET_MODEL": {
+  "kind": "model",
+  "summary": "Model ID the sonnet alias resolves to. The opusplan alias uses it when Plan Mode is off."
+ },
+ "ANTHROPIC_DEFAULT_SONNET_MODEL_DESCRIPTION": {
+  "kind": "string",
+  "summary": "Description shown for the pinned Sonnet model in the /model picker. The default begins with Custom Sonnet model."
+ },
+ "ANTHROPIC_DEFAULT_SONNET_MODEL_NAME": {
+  "kind": "string",
+  "summary": "Label for the pinned Sonnet model in the /model picker. Defaults to the recognised model name, otherwise the pinned ID."
+ },
+ "ANTHROPIC_DEFAULT_SONNET_MODEL_SUPPORTED_CAPABILITIES": {
+  "kind": "list",
+  "summary": "Lists, separated by commas, what the pinned Sonnet model can do, such as effort,thinking."
+ },
+ "ANTHROPIC_FEDERATION_RULE_ID": {
+  "kind": "string",
+  "summary": "Federation rule ID for Workload Identity Federation. Set together with ANTHROPIC_ORGANIZATION_ID to select federation credentials, which outrank a /login credential."
+ },
+ "ANTHROPIC_FOUNDRY_API_KEY": {
+  "kind": "string",
+  "summary": "API key for authenticating to Microsoft Foundry."
+ },
+ "ANTHROPIC_FOUNDRY_AUTH_TOKEN": {
+  "kind": "string",
+  "summary": "Bearer token for Microsoft Foundry, such as a Microsoft Entra access token. Beats the API key and the Azure default credential chain. Needs v2.1.203+."
+ },
+ "ANTHROPIC_FOUNDRY_BASE_URL": {
+  "kind": "url",
+  "summary": "Full base URL of the Microsoft Foundry resource. An alternative to ANTHROPIC_FOUNDRY_RESOURCE."
+ },
+ "ANTHROPIC_FOUNDRY_RESOURCE": {
+  "kind": "string",
+  "summary": "Microsoft Foundry resource name, not a URL or host name. Required unless ANTHROPIC_FOUNDRY_BASE_URL is set."
+ },
+ "ANTHROPIC_MODEL": {
+  "kind": "model",
+  "summary": "Model setting to use, as an alias or full name. See the model configuration docs."
+ },
+ "ANTHROPIC_ORGANIZATION_ID": {
+  "kind": "string",
+  "summary": "Organisation ID for Workload Identity Federation. Set together with ANTHROPIC_FEDERATION_RULE_ID."
+ },
+ "ANTHROPIC_PROFILE": {
+  "kind": "string",
+  "summary": "Name of the Anthropic profile to sign in with, for example one made by ant auth login or a Console sign-in without an API key."
+ },
+ "ANTHROPIC_SMALL_FAST_MODEL": {
+  "kind": "model",
+  "summary": "Haiku-class model used for background tasks. Deprecated."
+ },
+ "ANTHROPIC_SMALL_FAST_MODEL_AWS_REGION": {
+  "kind": "string",
+  "summary": "AWS region override for the Haiku-class model on Bedrock or Bedrock Mantle. On Bedrock it only applies when a Haiku model variable is also set."
+ },
+ "ANTHROPIC_VERTEX_BASE_URL": {
+  "kind": "url",
+  "summary": "Overrides the Google Cloud Agent Platform endpoint, for custom endpoints or an LLM gateway."
+ },
+ "ANTHROPIC_VERTEX_PROJECT_ID": {
+  "kind": "string",
+  "summary": "GCP project ID that Google Cloud Agent Platform requests are addressed to."
+ },
+ "ANTHROPIC_WORKSPACE_ID": {
+  "kind": "string",
+  "summary": "Workspace ID for workload identity federation. Needed when a federation rule covers several workspaces, so the token exchange targets the right one."
+ },
+ "API_FORCE_IDLE_TIMEOUT": {
+  "kind": "bool",
+  "summary": "Controls the 5-minute idle timeout on streaming responses. 0 disables it, 1 forces it on for every provider. Unset, it applies to most non-direct providers. Stream watchdogs still run."
+ },
+ "API_TIMEOUT_MS": {
+  "kind": "duration",
+  "summary": "Milliseconds each API request attempt gets to return response headers. Default 600000 (10 minutes), maximum 2147483647. 0 removes the limit (v2.1.305+), though non-streaming local attempts stop at 300 seconds."
+ },
+ "AWS_BEARER_TOKEN_BEDROCK": {
+  "kind": "string",
+  "summary": "Your Amazon Bedrock API key, used to authenticate requests."
+ },
+ "BASH_DEFAULT_TIMEOUT_MS": {
+  "kind": "duration",
+  "summary": "How long a foreground Bash or PowerShell command may run, in milliseconds. Defaults to 120000 (2 minutes). In unattended sessions a bigger value also lifts the background cap (v2.1.285+)."
+ },
+ "BASH_MAX_OUTPUT_LENGTH": {
+  "kind": "number",
+  "summary": "Most characters of bash output read back into a command result. Default 30000, maximum 150000. Ignored if the bashOutputMaxChars setting is set."
+ },
+ "BASH_MAX_TIMEOUT_MS": {
+  "kind": "duration",
+  "summary": "Longest timeout the model may set for a foreground Bash or PowerShell command, in milliseconds. Default 600000 (10 minutes). The ceiling is the larger of this and BASH_DEFAULT_TIMEOUT_MS."
+ },
+ "BETA_TRACING_ENDPOINT": {
+  "kind": "url",
+  "summary": "OTLP/HTTP endpoint for detailed beta tracing. With ENABLE_BETA_TRACING_DETAILED=1, logs and traces go here instead of the usual exporters. Ignored in project and local settings."
+ },
+ "CCR_FORCE_BUNDLE": {
+  "kind": "bool",
+  "summary": "Set to 1 so claude --cloud bundles and uploads the local repository rather than cloning from its remote."
+ },
+ "CLAUDECODE": {
+  "kind": "bool",
+  "summary": "Set to 1 in subprocesses Claude Code starts, such as Bash tools, hooks and stdio MCP servers. IDE terminals set it too. Scripts use it to detect Claude Code."
+ },
+ "CLAUDE_AGENT_SDK_DISABLE_BUILTIN_AGENTS": {
+  "kind": "bool",
+  "summary": "Set to 1 to drop all built-in subagent types, including general-purpose, giving SDK users a blank slate. Only applies in non-interactive (-p) mode."
+ },
+ "CLAUDE_AGENT_SDK_MCP_NO_PREFIX": {
+  "kind": "bool",
+  "summary": "Set to 1 so tools from SDK-created MCP servers keep their original names, without the mcp__server__ prefix. SDK use only."
+ },
+ "CLAUDE_ASYNC_AGENT_STALL_TIMEOUT_MS": {
+  "kind": "duration",
+  "summary": "Stall timeout for subagents, and workflow agents on v2.1.286+, in milliseconds. Default 600000 (10 minutes). It rises with CLAUDE_STREAM_IDLE_TIMEOUT_MS when the stream watchdog is on."
+ },
+ "CLAUDE_AUTOCOMPACT_PCT_OVERRIDE": {
+  "kind": "number",
+  "summary": "Chooses how full (1-100 percent) the auto-compact window gets before compaction starts, for the main conversation and subagents. Lower is earlier; it cannot delay compaction."
+ },
+ "CLAUDE_AUTO_BACKGROUND_TASKS": {
+  "kind": "bool",
+  "summary": "Set to 1 to force automatic backgrounding of long agent tasks, moving a subagent to the background after about two minutes. Also backgrounds long MCP calls in non-interactive mode (v2.1.212+)."
+ },
+ "CLAUDE_AX_PREPARK_MS": {
+  "kind": "duration",
+  "summary": "Screen reader mode only. Milliseconds to wait before writing a new or changed line. Default 0 (50 before v2.1.287), capped at 5000. Needs v2.1.233+."
+ },
+ "CLAUDE_AX_SCREEN_READER": {
+  "kind": "bool",
+  "summary": "Set to 1 for screen-reader friendly output with flat text, no borders or animations. 0 forces it off even if axScreenReader is true. The --ax-screen-reader flag wins. Needs v2.1.181+."
+ },
+ "CLAUDE_AX_STARTUP_QUIET_MS": {
+  "kind": "duration",
+  "summary": "Screen reader mode only. Milliseconds to hold the first render after the startup line so it can be read aloud. Default 3000, 0 renders at once, capped at 600000."
+ },
+ "CLAUDE_BASH_MAINTAIN_PROJECT_WORKING_DIR": {
+  "kind": "bool",
+  "summary": "Resets the main session to its starting directory once each Bash or PowerShell command finishes."
+ },
+ "CLAUDE_BYTE_STREAM_IDLE_TIMEOUT_MS": {
+  "kind": "duration",
+  "summary": "Timeout for the byte-level streaming idle watchdog, in milliseconds. When set, it beats CLAUDE_STREAM_IDLE_TIMEOUT_MS for that watchdog. Clamped between 10 seconds and 30 minutes. Needs v2.1.210+."
+ },
+ "CLAUDE_CLIENT_PRESENCE_FILE": {
+  "kind": "path",
+  "summary": "Path to a file an external tool creates on unlock and deletes on lock. While it exists, Remote Control mobile push notifications are skipped. Needs v2.1.181+."
+ },
+ "CLAUDE_CODE_ACCESSIBILITY": {
+  "kind": "bool",
+  "summary": "Set to 1 so the real terminal cursor stays visible and the inverted-text cursor is dropped. Screen magnifiers such as macOS Zoom can then track it."
+ },
+ "CLAUDE_CODE_ADDITIONAL_DIRECTORIES_CLAUDE_MD": {
+  "kind": "bool",
+  "summary": "Set to 1 to load memory files (CLAUDE.md, rules, CLAUDE.local.md) from directories added with --add-dir. They are skipped by default."
+ },
+ "CLAUDE_CODE_ALT_SCREEN_FULL_REPAINT": {
+  "kind": "bool",
+  "summary": "Set to 1 to repaint the whole screen every frame in fullscreen rendering. Use it if stale or misplaced text appears. Enabled automatically for background sessions on Windows."
+ },
+ "CLAUDE_CODE_ALWAYS_ENABLE_EFFORT": {
+  "kind": "bool",
+  "summary": "Set to 1 to send the effort parameter on every request, even for unrecognised model IDs. For gateways with custom IDs. Models that reject effort stay excluded."
+ },
+ "CLAUDE_CODE_API_KEY_HELPER_TTL_MS": {
+  "kind": "duration",
+  "summary": "How often, in milliseconds, credentials from an apiKeyHelper should be refreshed."
+ },
+ "CLAUDE_CODE_ARTIFACT_AUTO_OPEN": {
+  "kind": "bool",
+  "summary": "Set to 0 to stop the browser opening automatically when a new artifact is published."
+ },
+ "CLAUDE_CODE_ARTIFACT_COMMENTS": {
+  "kind": "bool",
+  "summary": "Set to 0 to stop Claude reading and replying to artifact comments. No effect if nonessential traffic is disabled, which turns artifacts off. Needs v2.1.221+."
+ },
+ "CLAUDE_CODE_ARTIFACT_COMMENTS_AUTOREACT": {
+  "kind": "bool",
+  "summary": "Set to 0 to stop Claude replying by itself to comments sent to it. Needs v2.1.228+."
+ },
+ "CLAUDE_CODE_ARTIFACT_PUBLISH_EDITS": {
+  "kind": "bool",
+  "summary": "Set to 0 so Claude edits an artifact file with its edit tools and publishes separately, instead of applying small changes during publish. Needs v2.1.300+."
+ },
+ "CLAUDE_CODE_ATTRIBUTION_HEADER": {
+  "kind": "bool",
+  "summary": "Set to 0 to leave the attribution block (client version and prompt fingerprint) off the system prompt. Direct Anthropic API caching is unaffected."
+ },
+ "CLAUDE_CODE_AUTOMOUNT_ROOTS": {
+  "kind": "list",
+  "summary": "Automount root folders to skip when searching parent folders for CLAUDE.md, skills and .mcp.json. Absolute paths, no symlinks, separated by colons (Unix) or semicolons (Windows). Needs v2.1.323+."
+ },
+ "CLAUDE_CODE_AUTO_BACKGROUND_WORKER_CHECKIN_SECONDS": {
+  "kind": "number",
+  "summary": "Removed in v2.1.283. Use CLAUDE_CODE_WORKER_CHECKIN_SCHEDULE instead."
+ },
+ "CLAUDE_CODE_AUTO_COMPACT_WINDOW": {
+  "kind": "number",
+  "summary": "Auto-compact window, meaning how full context gets before compaction, from 100000 to 1000000 tokens. Suffixed values such as 200k need v2.1.304+."
+ },
+ "CLAUDE_CODE_AUTO_CONNECT_IDE": {
+  "kind": "bool",
+  "summary": "Overrides automatic IDE connection. false stops the auto connect inside an IDE terminal. true forces an attempt when detection fails, such as under tmux. Beats the autoConnectIde setting."
+ },
+ "CLAUDE_CODE_AUTO_MODE_MODEL": {
+  "kind": "model",
+  "summary": "Model used for auto mode classifier requests, as a full ID such as claude-sonnet-4-6. Some cases ignore it. Needs v2.1.302+."
+ },
+ "CLAUDE_CODE_AUTO_MODE_SERVER": {
+  "kind": "bool",
+  "summary": "Whether the server reviews auto mode actions. 0 uses Claude Code's own classifier requests instead. Needs v2.1.271+, or v2.1.281+ on the direct Anthropic API."
+ },
+ "CLAUDE_CODE_AWS_CHAIN_RESOLVE_TIMEOUT_MS": {
+  "kind": "duration",
+  "summary": "Milliseconds to wait for the AWS default credential chain to yield credentials before failing. Default 60000. Raise for slow SSO or MFA sign-ins. Needs v2.1.207+."
+ },
+ "CLAUDE_CODE_BASH_EDIT_DIFF": {
+  "kind": "bool",
+  "summary": "0 turns off the diff of files changed while a Bash command ran. 1 records it in every permission mode. Beats the bashEditDiffEnabled setting. Needs v2.1.269+."
+ },
+ "CLAUDE_CODE_BG_TASKS_REPORT_RUNNING": {
+  "kind": "bool",
+  "summary": "0 makes a non-interactive session report idle at each turn end even with background work live. By default it keeps reporting running. Needs v2.1.269+, or set 1 on earlier versions."
+ },
+ "CLAUDE_CODE_BRIDGE_SESSION_ID": {
+  "kind": "string",
+  "summary": "Set automatically in Bash and hook subprocesses while Remote Control is connected. Holds the session ID in session_ form, matching the claude.ai/code URL. Needs v2.1.199+."
+ },
+ "CLAUDE_CODE_BS_AS_CTRL_BACKSPACE": {
+  "kind": "bool",
+  "summary": "0 reads the 0x08 byte (^H) as plain Backspace, 1 as Ctrl+Backspace. Overrides the platform default, which is Ctrl+Backspace on Windows except mintty or cygwin."
+ },
+ "CLAUDE_CODE_CERT_STORE": {
+  "kind": "list",
+  "summary": "Comma-separated CA certificate sources for TLS: bundled (Mozilla set) and system (operating system store). Default is bundled,system."
+ },
+ "CLAUDE_CODE_CHILD_SESSION": {
+  "kind": "bool",
+  "summary": "Set to 1 in subprocesses Claude Code launches via Bash, PowerShell, Monitor, hooks and status line. Marks a nested session, which is excluded from resume and history. Needs v2.1.172+."
+ },
+ "CLAUDE_CODE_CLIENT_CERT": {
+  "kind": "path",
+  "summary": "File path of the client certificate for mTLS."
+ },
+ "CLAUDE_CODE_CLIENT_KEY": {
+  "kind": "path",
+  "summary": "File path of the client private key for mTLS."
+ },
+ "CLAUDE_CODE_CLIENT_KEY_PASSPHRASE": {
+  "kind": "string",
+  "summary": "An optional passphrase if your CLAUDE_CODE_CLIENT_KEY is encrypted."
+ },
+ "CLAUDE_CODE_CONFIG_LOCK_WAIT_MS": {
+  "kind": "duration",
+  "summary": "Milliseconds a user or local scope MCP add or remove command keeps trying for the ~/.claude.json lock. Unset waits about 10 to 20 seconds. Needs v2.1.318+."
+ },
+ "CLAUDE_CODE_CONNECT_TIMEOUT_MS": {
+  "kind": "duration",
+  "summary": "Removed in v2.1.186 and now does nothing. Use API_TIMEOUT_MS, or CLAUDE_STREAM_FIRST_BYTE_TIMEOUT_MS for the response-header phase of streaming."
+ },
+ "CLAUDE_CODE_DEBUG_LOGS_DIR": {
+  "kind": "path",
+  "summary": "Chooses where the debug log goes. Despite its name this is a file, and debug mode must be turned on separately. Default is ~/.claude/debug/<session-id>.txt."
+ },
+ "CLAUDE_CODE_DEBUG_LOG_LEVEL": {
+  "kind": "string",
+  "summary": "Minimum level written to the debug log: verbose, debug (default), info, warn or error."
+ },
+ "CLAUDE_CODE_DISABLE_1M_CONTEXT": {
+  "kind": "bool",
+  "summary": "Set to 1 to turn off 1M context support. Removes [1m] variants from the model picker and holds default-1M models to 200K. Suits compliance-bound enterprises."
+ },
+ "CLAUDE_CODE_DISABLE_ADAPTIVE_THINKING": {
+  "kind": "bool",
+  "summary": "Set to 1 to turn adaptive reasoning off for Sonnet 4.6 and Opus 4.6, so the fixed MAX_THINKING_TOKENS budget applies. Newer models always adapt, so nothing changes there."
+ },
+ "CLAUDE_CODE_DISABLE_ADVISOR_TOOL": {
+  "kind": "bool",
+  "summary": "Set to 1 to disable the advisor tool. The /advisor command goes away, advisorModel is ignored, and the --advisor flag is accepted but does nothing."
+ },
+ "CLAUDE_CODE_DISABLE_AGENT_VIEW": {
+  "kind": "bool",
+  "summary": "Set to 1 to switch off background agents plus agent view, including claude agents, --bg and /background. Mirrors the `disableAgentView` setting."
+ },
+ "CLAUDE_CODE_DISABLE_ALTERNATE_SCREEN": {
+  "kind": "bool",
+  "summary": "Set to 1 to use the classic main-screen renderer instead of fullscreen, keeping native scrollback, Cmd+f and tmux copy mode. Beats CLAUDE_CODE_NO_FLICKER and the tui setting."
+ },
+ "CLAUDE_CODE_DISABLE_ARTIFACT": {
+  "kind": "bool",
+  "summary": "Set to 1 to turn off the Artifact tool, which publishes output as a private claude.ai page. No settings file can switch it back on. Alternatively set enableArtifact to false."
+ },
+ "CLAUDE_CODE_DISABLE_ATTACHMENTS": {
+  "kind": "bool",
+  "summary": "Set to 1 to stop attachment processing, so @ file mentions go as plain text rather than expanded content. Ignored in project and local settings."
+ },
+ "CLAUDE_CODE_DISABLE_AUTH_REFRESH_LOCK": {
+  "kind": "bool",
+  "summary": "Set to 1 so each process runs its own gcpAuthRefresh or awsAuthRefresh command instead of waiting for another process to run it. Needs v2.1.286+."
+ },
+ "CLAUDE_CODE_DISABLE_AUTO_MEMORY": {
+  "kind": "bool",
+  "summary": "Set to 1 to disable auto memory, so no memory files are created or loaded. 0 forces it on even under --bare or autoMemoryEnabled false."
+ },
+ "CLAUDE_CODE_DISABLE_BACKGROUND_TASKS": {
+  "kind": "bool",
+  "summary": "Set to 1 to remove run_in_background from Bash, PowerShell and subagent tools, turn off Ctrl+B, and stop automatic backgrounding. MCP tasks and Monitor still run in the background."
+ },
+ "CLAUDE_CODE_DISABLE_BEDROCK_CONTENT_TYPE_DEFAULT": {
+  "kind": "bool",
+  "summary": "Set to 1 to stop treating a Bedrock stream with a missing Content-Type as a binary event stream. Only for gateways that re-emit server-sent events. Needs v2.1.239+."
+ },
+ "CLAUDE_CODE_DISABLE_BEDROCK_CONTENT_TYPE_GUARD": {
+  "kind": "bool",
+  "summary": "Set to 1 to skip the check that a Bedrock stream has the eventstream content type. Better to fix the gateway to forward headers and body untouched. Needs v2.1.208+."
+ },
+ "CLAUDE_CODE_DISABLE_BG_EXIT_HANDOFF": {
+  "kind": "bool",
+  "summary": "Set to 1 to stop a background session's in-flight work when the supervisor stops or restarts it, instead of handing it to the next process. Needs v2.1.196+."
+ },
+ "CLAUDE_CODE_DISABLE_BG_SHELL_PRESSURE_REAP": {
+  "kind": "bool",
+  "summary": "Set to 1 to stop Claude Code killing background shells under critical memory pressure after 30 idle minutes (macOS and Linux). No effect on Windows. Needs v2.1.193+."
+ },
+ "CLAUDE_CODE_DISABLE_BG_STABLE_PATH": {
+  "kind": "bool",
+  "summary": "macOS native installer only. Set to 1 to run background session hosts from the installed binary, not ClaudeCode.app, which may re-prompt for folder access. Needs v2.1.295+."
+ },
+ "CLAUDE_CODE_DISABLE_BUNDLED_SKILLS": {
+  "kind": "bool",
+  "summary": "Set to 1 to remove bundled skills and workflows. Built-in commands like /init stay typable but hidden from the model. Plugin and user skills are unaffected. Same as disableBundledSkills."
+ },
+ "CLAUDE_CODE_DISABLE_CFC_PROMPT": {
+  "kind": "bool",
+  "summary": "For embedding hosts. Set to 1 to keep Claude in Chrome tools but omit the Chrome system prompt section and the bundled skill. Needs v2.1.257+."
+ },
+ "CLAUDE_CODE_DISABLE_CLAUDE_MDS": {
+  "kind": "bool",
+  "summary": "Set to 1 to stop loading any CLAUDE.md memory files, including user, project and auto memory."
+ },
+ "CLAUDE_CODE_DISABLE_CRON": {
+  "kind": "bool",
+  "summary": "Set to 1 to disable session-scoped scheduled tasks. /loop and CronCreate become unavailable and scheduled tasks stop firing."
+ },
+ "CLAUDE_CODE_DISABLE_DANGEROUS_RM_TIMEOUT": {
+  "kind": "bool",
+  "summary": "Set to 1 to drop the auto and bypassPermissions time limit and denials on critical-path removals. Set in the launching environment. Needs v2.1.281+."
+ },
+ "CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS": {
+  "kind": "bool",
+  "summary": "Set to 1 to strip pre-release anthropic-beta headers, their body fields and beta tool-schema fields from requests. Use when a gateway rejects them. Also removes MCP tool search."
+ },
+ "CLAUDE_CODE_DISABLE_EXPLORE_PLAN_AGENTS": {
+  "kind": "bool",
+  "summary": "Set to 1 to turn off the bundled Explore and Plan subagents; plan mode then reads files itself. Your own agents with those names remain. Requires v2.1.198+."
+ },
+ "CLAUDE_CODE_DISABLE_FAST_MODE": {
+  "kind": "bool",
+  "summary": "Set to 1 to turn fast mode off."
+ },
+ "CLAUDE_CODE_DISABLE_FEATURE_FLAGS": {
+  "kind": "bool",
+  "summary": "Set to 1 to stop fetching feature flags, which makes Remote Control and other flag-dependent features unavailable. Telemetry stays on. Older name DISABLE_GROWTHBOOK still works. Needs v2.1.319+."
+ },
+ "CLAUDE_CODE_DISABLE_FEEDBACK_SURVEY": {
+  "kind": "bool",
+  "summary": "Set to 1 to turn off the How is Claude doing? quality surveys. Telemetry opt-outs and nonessential-traffic blocking also disable them. Use feedbackSurveyRate for a sample rate."
+ },
+ "CLAUDE_CODE_DISABLE_FILE_CHECKPOINTING": {
+  "kind": "bool",
+  "summary": "Set to 1 to disable file checkpointing, so /rewind cannot restore code changes. Beats the fileCheckpointingEnabled setting."
+ },
+ "CLAUDE_CODE_DISABLE_FILE_MENTIONS": {
+  "kind": "bool",
+  "summary": "Set to 1 to stop expanding @ mentions of files and directories. Claude gets the paths and reads them itself. Ignored in project and local settings. Needs v2.1.299+."
+ },
+ "CLAUDE_CODE_DISABLE_GIT_INSTRUCTIONS": {
+  "kind": "bool",
+  "summary": "Set to 1 to remove built-in commit and PR instructions and the git status snapshot from context. Beats includeGitInstructions. Handy with your own git skills."
+ },
+ "CLAUDE_CODE_DISABLE_INLINE_SHELL_RM_PROMPT": {
+  "kind": "bool",
+  "summary": "Set to 1 to stop inspecting bash -c style inline scripts for critical-path removals. Variable and parameter target checks still run. Set in the launching environment. Needs v2.1.288+."
+ },
+ "CLAUDE_CODE_DISABLE_LEGACY_MODEL_REMAP": {
+  "kind": "bool",
+  "summary": "Set to 1 to stop Opus 4 and Opus 4.1 being remapped to the current Opus on the Anthropic API. Useful when deliberately pinning an old model."
+ },
+ "CLAUDE_CODE_DISABLE_MCP_TASK_BACKGROUND": {
+  "kind": "bool",
+  "summary": "Set to 1 so Claude waits for an MCP task result in interactive sessions. Automatic backgrounding, if on, still moves it after two minutes by default. Needs v2.1.304+."
+ },
+ "CLAUDE_CODE_DISABLE_MODEL_ACCESS_FALLBACK": {
+  "kind": "bool",
+  "summary": "Set to 1 so Bedrock and Google Cloud Agent Platform fail at once, rather than drop to an older model, when model access is lost mid-session. Needs v2.1.285+."
+ },
+ "CLAUDE_CODE_DISABLE_MOUNTED_DRIVE_RM_PROMPT": {
+  "kind": "bool",
+  "summary": "Set to 1 to turn off the mounted drive prompt for paths like /Volumes/USB. Set it in the launching environment, as settings env blocks ignore it. Needs v2.1.304+."
+ },
+ "CLAUDE_CODE_DISABLE_MOUSE": {
+  "kind": "bool",
+  "summary": "Set to 1 to disable mouse tracking in fullscreen rendering. PgUp and PgDn scrolling still work, and native copy-on-select is kept."
+ },
+ "CLAUDE_CODE_DISABLE_MOUSE_CLICKS": {
+  "kind": "bool",
+  "summary": "Set to 1 to ignore clicks, drags and hover in fullscreen rendering while keeping wheel scrolling. CLAUDE_CODE_DISABLE_MOUSE wins if both are set. Needs v2.1.195+."
+ },
+ "CLAUDE_CODE_DISABLE_MTLS_RELOAD_ON_STALE_CONNECTION": {
+  "kind": "bool",
+  "summary": "Set to 1 to stop re-reading the mTLS client cert and key after a connection-level API failure. Rotated files then load at the next startup. Needs v2.1.232+."
+ },
+ "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": {
+  "kind": "bool",
+  "summary": "Any non-empty value, even 0 or false, disables nonessential traffic: updates, telemetry, error reporting, feedback, release notes and feature-flag fetching. Unset it to allow them again."
+ },
+ "CLAUDE_CODE_DISABLE_NONSTREAMING_FALLBACK": {
+  "kind": "bool",
+  "summary": "Set to 1 to disable the non-streaming fallback after a mid-stream failure, so errors go to the retry layer. Helps when a proxy causes duplicate tool execution."
+ },
+ "CLAUDE_CODE_DISABLE_NOTIFICATION_PRESENCE_CHECK": {
+  "kind": "bool",
+  "summary": "Set to 1 so PushNotification sends desktop notifications even while you are typing or focused. The server may still suppress mobile push. Needs v2.1.193+."
+ },
+ "CLAUDE_CODE_DISABLE_OFFICIAL_MARKETPLACE_AUTOINSTALL": {
+  "kind": "bool",
+  "summary": "Set to 1 to skip auto-registering the official plugin marketplace, usually at first interactive launch. The skip is permanent. Add it manually with claude plugin marketplace add."
+ },
+ "CLAUDE_CODE_DISABLE_PERMISSION_PROMPT_NOTIFY_HOOKS": {
+  "kind": "bool",
+  "summary": "Set to 1 to stop running Notification hooks for unanswered permission requests sent to the SDK canUseTool callback, as in Desktop and VS Code. No effect in terminals. Needs v2.1.233+."
+ },
+ "CLAUDE_CODE_DISABLE_POLICY_SKILLS": {
+  "kind": "bool",
+  "summary": "Set to 1 to ignore skills in the system-wide managed skills folder. Handy in containers or CI where operator-supplied skills shouldn't load."
+ },
+ "CLAUDE_CODE_DISABLE_POWERSHELL_CMD_RM_DENY": {
+  "kind": "bool",
+  "summary": "Set to 1 to turn off the PowerShell tool check denying cmd built-ins rd, rmdir, del and erase on system paths. Ignored in settings env blocks. Needs v2.1.283+."
+ },
+ "CLAUDE_CODE_DISABLE_REFUSAL_FALLBACK": {
+  "kind": "bool",
+  "summary": "Set to 1 to stop Claude Code switching models on its own if the safety classifier flags a request. The switchModelsOnFlag setting does likewise."
+ },
+ "CLAUDE_CODE_DISABLE_STRUCTURED_OUTPUTS": {
+  "kind": "bool",
+  "summary": "Set to 1 to stop sending output_config.format and its beta header, for gateways whose upstream rejects them. Other pre-release features stay on. Needs v2.1.288+."
+ },
+ "CLAUDE_CODE_DISABLE_SUBSTITUTION_RM_PROMPT": {
+  "kind": "bool",
+  "summary": "Set to 1 to turn off the critical-path check for a recursive rm whose target is only command substitution output. Set in the launching environment. Needs v2.1.281+."
+ },
+ "CLAUDE_CODE_DISABLE_TERMINAL_TITLE": {
+  "kind": "bool",
+  "summary": "Set to 1 to stop automatic terminal title updates. Also skips the background request that names the session and turns off terminal status reports."
+ },
+ "CLAUDE_CODE_DISABLE_THINKING": {
+  "kind": "bool",
+  "summary": "Set to 1 to omit the thinking parameter from API requests, for gateways that reject it. Models that think by default may still think. MAX_THINKING_TOKENS=0 disables it properly."
+ },
+ "CLAUDE_CODE_DISABLE_ULTRAREVIEW_TRUST_CHECK": {
+  "kind": "bool",
+  "summary": "Set to 1 so claude ultrareview skips the Workspace not trusted exit in an untrusted folder that cannot prompt, such as CI. Set in the launching environment. Needs v2.1.309+."
+ },
+ "CLAUDE_CODE_DISABLE_UNKNOWN_MODEL_WINDOW_ENFORCEMENT": {
+  "kind": "bool",
+  "summary": "Set to 1 to skip proactive auto-compaction when the model ID is unrecognised, such as a gateway alias. CLAUDE_CODE_MAX_CONTEXT_TOKENS can fix the assumed window instead. Needs v2.1.223+."
+ },
+ "CLAUDE_CODE_DISABLE_VIRTUAL_SCROLL": {
+  "kind": "bool",
+  "summary": "Set to 1 to turn off virtual scrolling in fullscreen rendering and draw every transcript message. Use it if scrolling shows blank regions."
+ },
+ "CLAUDE_CODE_DISABLE_WEB_FETCH": {
+  "kind": "bool",
+  "summary": "Set to 1 to turn off the WebFetch tool. WebSearch stays available. Needs v2.1.285+."
+ },
+ "CLAUDE_CODE_DISABLE_WINDOWS_SHELL_LAUNCHER": {
+  "kind": "bool",
+  "summary": "Set to 1 to start PowerShell tool commands on Windows directly rather than via the cmd.exe launcher. Backgrounded PowerShell commands then stop when the session process exits. Needs v2.1.269+."
+ },
+ "CLAUDE_CODE_DISABLE_WORKFLOWS": {
+  "kind": "bool",
+  "summary": "Set to 1 to disable workflows. Same as the disableWorkflows setting."
+ },
+ "CLAUDE_CODE_DROP_UNAVAILABLE_DEFERRED_TOOL": {
+  "kind": "bool",
+  "summary": "Set to 1 to drop a deferred tool call whose tool is unavailable when resuming with -p. Otherwise it stays pending and your prompt never reaches Claude. Needs v2.1.319+."
+ },
+ "CLAUDE_CODE_EFFORT_LEVEL": {
+  "kind": "string",
+  "summary": "Effort level for supported models: low, medium, high, xhigh or max, depending on the model. Beats --effort, /effort and settings. auto or unset sends no effort."
+ },
+ "CLAUDE_CODE_EMIT_SESSION_STATE_EVENTS": {
+  "kind": "bool",
+  "summary": "Set to 1 to add session_state_changed messages carrying session state to the message stream. Needs the Agent SDK, or --print with stream-json output and --verbose."
+ },
+ "CLAUDE_CODE_ENABLE_AUTO_MODE": {
+  "kind": "bool",
+  "summary": "Retained for older setups and has no effect, since auto mode is now on for every provider. v2.1.158 to v2.1.206 needed it set to 1."
+ },
+ "CLAUDE_CODE_ENABLE_AWAY_SUMMARY": {
+  "kind": "bool",
+  "summary": "Overrides session recap availability. 0 forces recaps off. 1 forces them on even when awaySummaryEnabled is false. Beats the setting and /config toggle."
+ },
+ "CLAUDE_CODE_ENABLE_BACKGROUND_PLUGIN_REFRESH": {
+  "kind": "bool",
+  "summary": "Set to 1 to reload plugin state between turns in non-interactive mode after a background install. Off by default because it breaks prompt caching for that turn."
+ },
+ "CLAUDE_CODE_ENABLE_CFC": {
+  "kind": "bool",
+  "summary": "1 starts CLI sessions with Chrome integration on, 0 with it off. Beats claudeInChromeDefaultEnabled. The --chrome and --no-chrome flags win. A 1 in project settings is ignored."
+ },
+ "CLAUDE_CODE_ENABLE_FEEDBACK_SURVEY_FOR_OTEL": {
+  "kind": "bool",
+  "summary": "Set to 1 to send survey ratings as OTEL events to your own collector when Anthropic-bound traffic is blocked. Nothing goes to Anthropic. Only applies when opt-outs are set."
+ },
+ "CLAUDE_CODE_ENABLE_FINE_GRAINED_TOOL_STREAMING": {
+  "kind": "bool",
+  "summary": "Controls streaming of tool call inputs as generated. On by default for the Anthropic API. 0 opts out, 1 forces it on behind a proxy. Off by default on Foundry."
+ },
+ "CLAUDE_CODE_ENABLE_GATEWAY_MODEL_DISCOVERY": {
+  "kind": "bool",
+  "summary": "Set to 1 to fill the /model picker from the gateway's /v1/models endpoint when ANTHROPIC_BASE_URL points at a compatible gateway. Off by default. availableModels still filters results."
+ },
+ "CLAUDE_CODE_ENABLE_OPUS_4_7_FAST_MODE": {
+  "kind": "bool",
+  "summary": "Gone from v2.1.142 onward, after Opus 4.7 replaced Opus 4.6 as the model fast mode defaults to."
+ },
+ "CLAUDE_CODE_ENABLE_PROMPT_SUGGESTION": {
+  "kind": "bool",
+  "summary": "false turns off prompt suggestions, the greyed predictions in the prompt. true stops the pause near usage limits applying until you hit the limit. Beats promptSuggestionEnabled. Needs v2.1.238+."
+ },
+ "CLAUDE_CODE_ENABLE_SHARE_BUNDLE": {
+  "kind": "bool",
+  "summary": "Set to 1 so /share saves its report and session transcript to a local archive under ~/.claude/feedback-bundles/ instead of sending the report. Can't override an organisation policy. Needs v2.1.299+."
+ },
+ "CLAUDE_CODE_ENABLE_TASKS": {
+  "kind": "bool",
+  "summary": "Picks the task-tracking tools. Default is TaskCreate, TaskUpdate, TaskGet and TaskList. Set to 0 to get the legacy TodoWrite tool instead."
+ },
+ "CLAUDE_CODE_ENABLE_TELEMETRY": {
+  "kind": "bool",
+  "summary": "Set to 1 to enable OpenTelemetry metrics and logging. Needed before configuring OTel exporters. Ignored in project and local settings."
+ },
+ "CLAUDE_CODE_ENABLE_TODO_TOOLS": {
+  "kind": "bool",
+  "summary": "Set to 1 to provide the task-tracking tools on every model, not just the default list. CLAUDE_CODE_ENABLE_TASKS still picks Task tools or TodoWrite. Needs v2.1.233+."
+ },
+ "CLAUDE_CODE_EVEN_MORE_DANGEROUSLY_SKIP_PERMISSIONS": {
+  "kind": "bool",
+  "summary": "Set to 1 to run dangerous rm commands with no prompt in bypassPermissions mode. Set it in the launching environment, as settings env blocks ignore it. Needs v2.1.311+."
+ },
+ "CLAUDE_CODE_EXIT_AFTER_STOP_DELAY": {
+  "kind": "duration",
+  "summary": "Milliseconds to wait after the query loop goes idle before exiting automatically. Useful for scripts and SDK mode."
+ },
+ "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": {
+  "kind": "bool",
+  "summary": "Set to 1 to enable agent teams, which are experimental and off by default."
+ },
+ "CLAUDE_CODE_EXPERIMENTAL_CODE_MODE": {
+  "kind": "bool",
+  "summary": "Set to 1 to start sessions in the experimental Code Mode. 0 keeps it off, and in managed settings can block it organisation-wide. Not honoured in every settings file."
+ },
+ "CLAUDE_CODE_EXTRA_BODY": {
+  "kind": "string",
+  "summary": "JSON to blend into the top of every model request body, for provider-specific parameters. Exporting it in your shell means background sessions pick it up too."
+ },
+ "CLAUDE_CODE_FILE_READ_MAX_OUTPUT_TOKENS": {
+  "kind": "number",
+  "summary": "Overrides the 25,000 token limit on file reads. Raise it to read larger files whole. Reads using allow_large can exceed it when context has room."
+ },
+ "CLAUDE_CODE_FORCE_SESSION_PERSISTENCE": {
+  "kind": "bool",
+  "summary": "Set to 1 to force transcript, history and claude agents registration even when launched inside another Claude Code session. Fixes a top-level session wrongly treated as nested."
+ },
+ "CLAUDE_CODE_FORCE_STRIKETHROUGH": {
+  "kind": "bool",
+  "summary": "Set to 1 to force strikethrough rendering of ~~text~~ when your terminal supports it but isn't detected, such as over SSH. Needs v2.1.186+."
+ },
+ "CLAUDE_CODE_FORCE_SYNC_OUTPUT": {
+  "kind": "bool",
+  "summary": "Set to 1 to force DEC mode 2026 synchronised output on terminals that support it but aren't auto-detected, like Emacs eat. No effect under tmux. Doesn't change the renderer."
+ },
+ "CLAUDE_CODE_FORCE_TERMINAL_IMAGES": {
+  "kind": "bool",
+  "summary": "Set to 1 to draw mod Image elements as pictures on terminals with kitty graphics Unicode placeholders that still show dimmed alt text."
+ },
+ "CLAUDE_CODE_FORK_SUBAGENT": {
+  "kind": "bool",
+  "summary": "Controls fork mode, on by default, which lets Claude start forks itself and stops it waiting for subagents in interactive sessions. Set to 0 to turn it off."
+ },
+ "CLAUDE_CODE_FORWARD_SUBAGENT_TEXT": {
+  "kind": "bool",
+  "summary": "Set to 1 to emit subagent text and thinking blocks in claude -p stream-json output, like --forward-subagent-text. Ignored outside that mode. Needs v2.1.211+."
+ },
+ "CLAUDE_CODE_GATEWAY_HINT_HEADERS": {
+  "kind": "bool",
+  "summary": "1 sends gateway hint headers (such as x-claude-code-request-class) to proxies and third-party providers. 0 stops them everywhere, including the direct API default. Needs v2.1.273+."
+ },
+ "CLAUDE_CODE_GATEWAY_MODEL_DISCOVERY_TIMEOUT_MS": {
+  "kind": "duration",
+  "summary": "Timeout for the gateway model discovery request, in milliseconds. Default 3000. Plain digits only, anything else keeps the default. Needs v2.1.269+."
+ },
+ "CLAUDE_CODE_GIT_BASH_PATH": {
+  "kind": "path",
+  "summary": "Windows only. Path to bash.exe for Git Bash when it isn't on PATH. An invalid path is ignored and auto-detection is used, with a debug warning."
+ },
+ "CLAUDE_CODE_GLOB_HIDDEN": {
+  "kind": "bool",
+  "summary": "Set to false to leave dotfiles out of Glob tool results. Included by default. Doesn't affect @ autocomplete, ls, Grep or Read."
+ },
+ "CLAUDE_CODE_GLOB_NO_IGNORE": {
+  "kind": "bool",
+  "summary": "Set to false to make the Glob tool respect .gitignore. By default it returns gitignored files too. Doesn't affect @ file autocomplete."
+ },
+ "CLAUDE_CODE_GLOB_TIMEOUT_SECONDS": {
+  "kind": "duration",
+  "summary": "Timeout in seconds for Glob and Grep searches. Defaults to 20 on most platforms and 60 on WSL."
+ },
+ "CLAUDE_CODE_GOAL_CHECKIN_MINUTES": {
+  "kind": "number",
+  "summary": "Minutes background work may hold an active goal before Claude is asked to check on it. Default 30, 0 turns it off, maximum 10080. Needs v2.1.234+."
+ },
+ "CLAUDE_CODE_GZIP_REQUEST_BODIES": {
+  "kind": "bool",
+  "summary": "Set to 0 to stop gzip compression of API, telemetry and artifact request bodies to api.anthropic.com. Use it if a TLS-inspecting proxy mishandles compressed requests."
+ },
+ "CLAUDE_CODE_HIDE_CWD": {
+  "kind": "bool",
+  "summary": "Set to 1 to leave the working directory out of the startup logo, which avoids showing your OS username during screenshares."
+ },
+ "CLAUDE_CODE_IDE_HOST_OVERRIDE": {
+  "kind": "string",
+  "summary": "Overrides the host address used to reach the IDE extension. Normally auto-detected, including WSL to Windows routing."
+ },
+ "CLAUDE_CODE_IDE_SKIP_AUTO_INSTALL": {
+  "kind": "bool",
+  "summary": "Set to 1 to stop /ide installing the IDE extension. Same as autoInstallIdeExtension false. Before v2.1.318 it also stopped installs at startup in VS Code, Cursor or Devin Desktop terminals."
+ },
+ "CLAUDE_CODE_IDE_SKIP_VALID_CHECK": {
+  "kind": "bool",
+  "summary": "Set to 1 to skip validating IDE lockfile entries while connecting. Use it when auto-connect misses a running IDE."
+ },
+ "CLAUDE_CODE_IDLE_COMPACT_MIN_TOKENS": {
+  "kind": "number",
+  "summary": "Token count where idle compaction starts. Default 200000; values under 100000 are lifted to that, and non-numbers are ignored. Disable via idleCompaction false. Needs v2.1.290+."
+ },
+ "CLAUDE_CODE_MAX_CONCURRENT_SUBAGENTS": {
+  "kind": "number",
+  "summary": "Most subagents running at once in a session before the Agent tool refuses more. Default 20. Positive whole numbers only. It adjusts the cap but can't remove it. Needs v2.1.217+."
+ },
+ "CLAUDE_CODE_MAX_CONTEXT_TOKENS": {
+  "kind": "number",
+  "summary": "Overrides the context window size assumed for the active model. Use when a model behind ANTHROPIC_BASE_URL has a different window than its name implies. Behaviour varies since v2.1.193."
+ },
+ "CLAUDE_CODE_MAX_MCP_DESCRIPTION_LENGTH": {
+  "kind": "number",
+  "summary": "Maximum characters of MCP tool descriptions and server instructions sent to the model. Replaces both defaults (4096 and 16384). Positive whole numbers only. Needs v2.1.280+."
+ },
+ "CLAUDE_CODE_MAX_OUTPUT_TOKENS": {
+  "kind": "number",
+  "summary": "Caps output tokens on most requests. Defaults and caps differ per model, and higher values get cut down. Unrecognised models default to 32000. More output means less usable context."
+ },
+ "CLAUDE_CODE_MAX_RETRIES": {
+  "kind": "number",
+  "summary": "Number of retries for failed API requests. Default 10. Retrying may stop sooner on 529 overloads. Capped at 15 from v2.1.186. CLAUDE_CODE_RETRY_WATCHDOG lifts the cap."
+ },
+ "CLAUDE_CODE_MAX_SUBAGENTS_PER_SESSION": {
+  "kind": "number",
+  "summary": "Removed in v2.1.224 and now does nothing. It used to cap total subagents spawned per session at 200. The concurrent and depth limits still apply."
+ },
+ "CLAUDE_CODE_MAX_SUBAGENT_SPAWN_DEPTH": {
+  "kind": "number",
+  "summary": "Subagent layers allowed below the main conversation. Default 3. Set 1 to stop nesting. Positive whole numbers only. Needs v2.1.217+."
+ },
+ "CLAUDE_CODE_MAX_TURNS": {
+  "kind": "number",
+  "summary": "Caps agentic turns when no limit is passed. The --max-turns flag wins. A value that isn't a positive integer is rejected at startup."
+ },
+ "CLAUDE_CODE_MAX_WEB_SEARCHES_PER_SESSION": {
+  "kind": "number",
+  "summary": "Cap on WebSearch calls per session. Default 200. Past it, Claude is told to carry on with what it has. Positive whole numbers only. Needs v2.1.212+."
+ },
+ "CLAUDE_CODE_MCP_ALLOWLIST_ENV": {
+  "kind": "bool",
+  "summary": "Set to 1 to start stdio MCP servers with a safe baseline environment plus the server's own env, rather than inheriting your shell environment."
+ },
+ "CLAUDE_CODE_MCP_AUTO_BACKGROUND_MS": {
+  "kind": "duration",
+  "summary": "Milliseconds before a long-running MCP tool call shifts to a background task. Default 120000 (2 minutes). 0 disables it, so interactive sessions wait on MCP tasks. Needs v2.1.212+."
+ },
+ "CLAUDE_CODE_MCP_STARTUP_WAIT_MS": {
+  "kind": "duration",
+  "summary": "Milliseconds a non-interactive session's first turn pauses for MCP servers still connecting. 0 skips the pause for most, though some servers keep their own. Needs v2.1.274+."
+ },
+ "CLAUDE_CODE_MCP_TOOL_IDLE_TIMEOUT": {
+  "kind": "duration",
+  "summary": "Aborts an MCP tool call that shows no response or progress for this many milliseconds. Defaults are 5 minutes for network servers and 30 minutes for stdio. Zero disables it."
+ },
+ "CLAUDE_CODE_MESSAGING_SOCKET": {
+  "kind": "path",
+  "summary": "Path to the session's inbox socket, exported by Claude Code to hooks and Bash commands so other sessions can send messages. You can't set it yourself."
+ },
+ "CLAUDE_CODE_MESSAGING_TOKEN": {
+  "kind": "string",
+  "summary": "A token unique to the session, exported next to the messaging socket. Scripts put it in an auth line to show they belong to that session. Not configurable in settings."
+ },
+ "CLAUDE_CODE_NATIVE_CURSOR": {
+  "kind": "bool",
+  "summary": "Set to 1 to put the terminal's actual cursor at the input caret in place of a painted block, so blink and shape follow your terminal."
+ },
+ "CLAUDE_CODE_NEW_INIT": {
+  "kind": "bool",
+  "summary": "Set to 1 to make /init an interactive setup that asks which files to create (CLAUDE.md, skills, hooks) first. Without it, /init writes CLAUDE.md automatically."
+ },
+ "CLAUDE_CODE_NONBLOCKING_STDOUT": {
+  "kind": "bool",
+  "summary": "Set to 1 to send terminal output through a second non-blocking descriptor, so a stalled terminal such as a paused tmux pane can't freeze the session."
+ },
+ "CLAUDE_CODE_NONSTREAMING_TIMEOUT_RETRIES": {
+  "kind": "number",
+  "summary": "Caps how many times a timed-out non-streaming request is sent again. Zero means it fails on the first timeout."
+ },
+ "CLAUDE_CODE_NO_FLICKER": {
+  "kind": "bool",
+  "summary": "Set to 1 to turn on fullscreen rendering, a research preview that cuts flicker and keeps memory steady in long chats. Overrides the tui setting."
+ },
+ "CLAUDE_CODE_OAUTH_REFRESH_TOKEN": {
+  "kind": "string",
+  "summary": "claude.ai refresh token that `claude auth login` exchanges directly instead of opening a browser. Needs CLAUDE_CODE_OAUTH_SCOPES. Ignored in project and local settings."
+ },
+ "CLAUDE_CODE_OAUTH_SCOPES": {
+  "kind": "list",
+  "summary": "Space-separated scopes the refresh token carries. Mandatory when `CLAUDE_CODE_OAUTH_REFRESH_TOKEN` is set, and not honoured from project or local settings."
+ },
+ "CLAUDE_CODE_OAUTH_TOKEN": {
+  "kind": "string",
+  "summary": "claude.ai access token for SDK and automated use, as an alternative to /login. It beats keychain credentials. Generate one with `claude setup-token`."
+ },
+ "CLAUDE_CODE_OPUS_4_6_FAST_MODE_OVERRIDE": {
+  "kind": "bool",
+  "summary": "Removed and now does nothing. It used to pin fast mode to Opus 4.6, which no longer supports fast mode."
+ },
+ "CLAUDE_CODE_OTEL_CONTENT_MAX_LENGTH": {
+  "kind": "number",
+  "summary": "Maximum length of content-bearing OpenTelemetry attributes, in UTF-16 code units. Default 61440 (60 KB). Lower it to reduce telemetry volume."
+ },
+ "CLAUDE_CODE_OTEL_DIAG_STDERR": {
+  "kind": "bool",
+  "summary": "Set to 1 to print OpenTelemetry exporter diagnostic errors to stderr. Otherwise they only show with --debug, so a broken exporter fails silently."
+ },
+ "CLAUDE_CODE_OTEL_FLUSH_TIMEOUT_MS": {
+  "kind": "duration",
+  "summary": "How long, in milliseconds, to wait when flushing pending OpenTelemetry spans. Default 5000."
+ },
+ "CLAUDE_CODE_OTEL_HEADERS_HELPER_DEBOUNCE_MS": {
+  "kind": "duration",
+  "summary": "How often, in milliseconds, dynamic OpenTelemetry headers are refreshed. Default 1740000 (29 minutes)."
+ },
+ "CLAUDE_CODE_OTEL_SHUTDOWN_TIMEOUT_MS": {
+  "kind": "duration",
+  "summary": "Milliseconds the OpenTelemetry exporter gets to finish at shutdown. Default 2000. Raise it if metrics go missing at exit."
+ },
+ "CLAUDE_CODE_OVERLOADED_RETRY_BASE_DELAY_MS": {
+  "kind": "duration",
+  "summary": "Starting backoff delay, in milliseconds, between retries after a 529 overloaded error. Default 500. Accepts whole numbers from 500 to 32000, otherwise ignored."
+ },
+ "CLAUDE_CODE_OVERLOADED_RETRY_MAX_DELAY_MS": {
+  "kind": "duration",
+  "summary": "Upper limit, in milliseconds, on backoff between retries after a 529 overloaded error. Default 32000. Accepts whole numbers from 32000 to 300000, otherwise ignored."
+ },
+ "CLAUDE_CODE_PACKAGE_MANAGER_AUTO_UPDATE": {
+  "kind": "bool",
+  "summary": "Set to 1 so Claude Code runs your package manager's upgrade in the background whenever a newer release exists. Works for Homebrew and WinGet only."
+ },
+ "CLAUDE_CODE_PERFORCE_MODE": {
+  "kind": "bool",
+  "summary": "Set to 1 for Perforce safety. When a file isn't writable, Edit, Write and NotebookEdit fail and suggest `p4 edit`, keeping changes tracked."
+ },
+ "CLAUDE_CODE_PLUGIN_CACHE_DIR": {
+  "kind": "path",
+  "summary": "Overrides the plugins root directory. Marketplaces and the plugin cache sit in subdirectories beneath it. Defaults to ~/.claude/plugins."
+ },
+ "CLAUDE_CODE_PLUGIN_DIRS": {
+  "kind": "list",
+  "summary": "Plugin directories to load for one session, as if passed with --plugin-dir. Separate with a colon on Unix or semicolon on Windows. Use absolute or ~ paths."
+ },
+ "CLAUDE_CODE_PLUGIN_DIR_WATCH": {
+  "kind": "bool",
+  "summary": "Controls reloading of mods when their files change. Set to 1 to reload mods from --plugin-dir like skills-directory mods, or 0 to turn reloading off."
+ },
+ "CLAUDE_CODE_PLUGIN_GIT_TIMEOUT_MS": {
+  "kind": "duration",
+  "summary": "Milliseconds allowed to clone or refresh a plugin marketplace, defaulting to 120000. Raise it for big repos or slow connections."
+ },
+ "CLAUDE_CODE_PLUGIN_KEEP_MARKETPLACE_ON_FAILURE": {
+  "kind": "bool",
+  "summary": "Set to 1 to keep the existing marketplace checkout instead of re-cloning when a refresh can't reach the remote. Handy offline or airgapped."
+ },
+ "CLAUDE_CODE_PLUGIN_PREFER_HTTPS": {
+  "kind": "bool",
+  "summary": "Set to 1 to clone GitHub owner/repo shorthand over HTTPS rather than SSH. Useful in CI or containers without an SSH key for github.com."
+ },
+ "CLAUDE_CODE_PLUGIN_SEED_DIR": {
+  "kind": "list",
+  "summary": "Read-only plugin seed directories (colon or semicolon separated) used to ship pre-populated plugins in a container image, avoiding re-cloning at startup."
+ },
+ "CLAUDE_CODE_POWERSHELL_RESPECT_EXECUTION_POLICY": {
+  "kind": "bool",
+  "summary": "Set to 1 to stop passing -ExecutionPolicy Bypass when launching PowerShell, so the machine's own execution policy applies. Group Policy is never overridden either way."
+ },
+ "CLAUDE_CODE_PRINT_BG_WAIT_CEILING_MS": {
+  "kind": "duration",
+  "summary": "Maximum idle wait, in milliseconds, for background work after the final turn in -p mode. Default 600000 (10 minutes). Zero waits indefinitely."
+ },
+ "CLAUDE_CODE_PROCESS_WRAPPER": {
+  "kind": "path",
+  "summary": "Argv prefix for a corporate launcher that starts processes Claude Code spawns from its own binary. Set it in user or managed settings env. Ignored on Windows."
+ },
+ "CLAUDE_CODE_PROJECT_DIR_NAME": {
+  "kind": "string",
+  "summary": "Used with CLAUDE_CONFIG_DIR to choose the projects/ subdirectory name for transcripts and auto memory, instead of one derived from the working directory."
+ },
+ "CLAUDE_CODE_PROMPT_CACHE_TTL": {
+  "kind": "string",
+  "summary": "Sets the main conversation's prompt cache lifetime to 5m or 1h, the only accepted values. One-hour cache writes cost more. FORCE_PROMPT_CACHING_5M overrides it."
+ },
+ "CLAUDE_CODE_PROPAGATE_TRACEPARENT": {
+  "kind": "bool",
+  "summary": "Set to 1 to pass W3C trace context (traceparent) on model and HTTP MCP requests and to subprocesses when ANTHROPIC_BASE_URL points at a custom proxy."
+ },
+ "CLAUDE_CODE_PROVIDER_MANAGED_BY_HOST": {
+  "kind": "bool",
+  "summary": "Embedding host platforms set this when they control model routing. Claude Code then disregards provider, endpoint, auth and managed model settings, so the host decides."
+ },
+ "CLAUDE_CODE_PROXY_RESOLVES_HOSTS": {
+  "kind": "bool",
+  "summary": "Set to 1 to let the proxy do DNS resolution instead of the client. Set it in the launching process's environment when the host manages the provider."
+ },
+ "CLAUDE_CODE_REMOTE": {
+  "kind": "bool",
+  "summary": "Set automatically to true when running as a cloud session. Hooks and setup scripts can read it to detect that."
+ },
+ "CLAUDE_CODE_REMOTE_SESSION_ID": {
+  "kind": "string",
+  "summary": "Set automatically in cloud sessions to the current session's ID, useful for building a link back to the transcript."
+ },
+ "CLAUDE_CODE_RESTRICTED": {
+  "kind": "bool",
+  "summary": "Set to 1 to start in restricted mode, the same as --restricted. Ignored when placed in a settings env block."
+ },
+ "CLAUDE_CODE_RESUME_HINT_COMMAND": {
+  "kind": "string",
+  "summary": "Name of your wrapper script, so the exit message prints `name --resume <id>` rather than the claude command. Names not matching ^\\w[\\w-]*$ are ignored."
+ },
+ "CLAUDE_CODE_RESUME_INTERRUPTED_TURN": {
+  "kind": "bool",
+  "summary": "Set to 1 to automatically continue a session that ended mid-turn, so SDK callers needn't resend the prompt. Unset or 0 turns it off."
+ },
+ "CLAUDE_CODE_RESUME_INTERRUPTED_TURN_MAX_AGE_MS": {
+  "kind": "duration",
+  "summary": "The oldest last transcript message, in milliseconds, that still lets an interrupted turn resume itself. Unset or 0 means no limit; negative or invalid values fall back to one hour."
+ },
+ "CLAUDE_CODE_RESUME_PROMPT": {
+  "kind": "string",
+  "summary": "Replaces the message sent when an interrupted turn continues or a deferred tool call resumes with -p. Default is a short continue message. Empty uses the default."
+ },
+ "CLAUDE_CODE_RESUME_SHOWS_CUT_OFF_CALLS": {
+  "kind": "bool",
+  "summary": "Set to 1 to keep interrupted tool calls, marked as cut off, when a turn is auto-continued. Otherwise they're dropped. Some calls, such as subagents, are always dropped."
+ },
+ "CLAUDE_CODE_RETRY_WATCHDOG": {
+  "kind": "bool",
+  "summary": "Set to 1 for unattended runs so 429 and 529 capacity errors retry indefinitely with backoff up to 5 minutes. Spend-limit 429s still fail at once."
+ },
+ "CLAUDE_CODE_RETRY_WATCHDOG_MAX_WAIT_MS": {
+  "kind": "duration",
+  "summary": "Cap, in milliseconds, on how long each API request waits out 429 and 529 errors under the retry watchdog. Unset means no limit."
+ },
+ "CLAUDE_CODE_RETRY_WATCHDOG_USAGE_LIMIT_RECHECK_MS": {
+  "kind": "duration",
+  "summary": "Minimum gap, in milliseconds, between checks that a usage limit has lifted while the retry watchdog waits. Accepts 60000 to 10800000. Outside that range, no checks run."
+ },
+ "CLAUDE_CODE_SAFE_MODE": {
+  "kind": "bool",
+  "summary": "Set to 1 to start with CLAUDE.md, skills, plugins, hooks, MCP servers and other customisations not loaded, for troubleshooting. Same as --safe-mode. Managed policy still applies."
+ },
+ "CLAUDE_CODE_SCRIPT_CAPS": {
+  "kind": "string",
+  "summary": "JSON object limiting how often named scripts may run per session when the subprocess env scrub is on. Keys match command text, values are call limits."
+ },
+ "CLAUDE_CODE_SCROLL_SPEED": {
+  "kind": "number",
+  "summary": "Mouse wheel scroll multiplier for fullscreen rendering. Accepts positive values up to 20, including fractions such as 0.5. Ignored in the JetBrains terminal."
+ },
+ "CLAUDE_CODE_SEND_FEEDBACK": {
+  "kind": "bool",
+  "summary": "0 switches Claude-drafted feedback off for the session; 1 switches it on only if your account already has access. It cannot grant access."
+ },
+ "CLAUDE_CODE_SESSIONEND_HOOKS_TIMEOUT_MS": {
+  "kind": "duration",
+  "summary": "Time budget in milliseconds for SessionEnd hooks, also the default timeout per hook. Default is 1.5 seconds, raised to the largest configured hook timeout, up to 60 seconds."
+ },
+ "CLAUDE_CODE_SESSION_ID": {
+  "kind": "string",
+  "summary": "Filled in automatically with the current session ID inside Bash, PowerShell, hook and stdio MCP subprocesses, so scripts and tools can link back to the session."
+ },
+ "CLAUDE_CODE_SHELL": {
+  "kind": "path",
+  "summary": "Path to the bash or zsh binary used for Bash tool commands. Other shells such as fish are unsupported. An invalid value falls back to auto-detection."
+ },
+ "CLAUDE_CODE_SHELL_PREFIX": {
+  "kind": "string",
+  "summary": "Command prefix wrapping spawned shell commands: Bash tool calls, hooks, status line and stdio MCP startup. The wrapper gets the command as one quoted argument and must re-evaluate it."
+ },
+ "CLAUDE_CODE_SIMPLE": {
+  "kind": "bool",
+  "summary": "Set to 1 for a minimal system prompt with only Bash, file read and file edit tools. Skips hooks, skills, plugins, MCP discovery, memory and CLAUDE.md. Same as --bare."
+ },
+ "CLAUDE_CODE_SIMPLE_SYSTEM_PROMPT": {
+  "kind": "bool",
+  "summary": "Picks the full or shorter system prompt. Set to 1 to force the shorter one on any model, or 0, false, no or off to force the full one."
+ },
+ "CLAUDE_CODE_SKIP_ANTHROPIC_AWS_AUTH": {
+  "kind": "bool",
+  "summary": "Bypasses client-side auth for Claude Platform on AWS, useful when a gateway signs the requests itself."
+ },
+ "CLAUDE_CODE_SKIP_AWS_CRED_CACHE": {
+  "kind": "bool",
+  "summary": "Set to 1 to stop caching credentials from the AWS default provider chain, so every API request resolves them again. SSO profiles then ask IAM Identity Center each time."
+ },
+ "CLAUDE_CODE_SKIP_BEDROCK_AUTH": {
+  "kind": "bool",
+  "summary": "Bypasses AWS auth for Amazon Bedrock, such as when traffic passes through an LLM gateway."
+ },
+ "CLAUDE_CODE_SKIP_FAST_MODE_NETWORK_ERRORS": {
+  "kind": "bool",
+  "summary": "Set to 1 to count a fast mode availability check that errors as available, for networks blocking it. An organisation-level disable still wins."
+ },
+ "CLAUDE_CODE_SKIP_FAST_MODE_ORG_CHECK": {
+  "kind": "bool",
+  "summary": "Set to 1 to skip the client-side fast mode availability check, for proxies that intercept it. The API still rejects fast mode if your organisation has it disabled."
+ },
+ "CLAUDE_CODE_SKIP_FOUNDRY_AUTH": {
+  "kind": "bool",
+  "summary": "Skips Azure authentication for Microsoft Foundry when a proxy or gateway injects its own Authorization header, which Claude Code leaves intact. Ignored if a Foundry key or token is set."
+ },
+ "CLAUDE_CODE_SKIP_MANTLE_AUTH": {
+  "kind": "bool",
+  "summary": "Skips AWS authentication for the Amazon Bedrock Mantle endpoint, for example when using an LLM gateway."
+ },
+ "CLAUDE_CODE_SKIP_MODEL_ACCESS_MEMORY": {
+  "kind": "bool",
+  "summary": "Startup model checks on Bedrock and Google's Agent Platform remember inaccessible models for up to a day. Set to 1 to switch that memory off."
+ },
+ "CLAUDE_CODE_SKIP_PROMPT_HISTORY": {
+  "kind": "bool",
+  "summary": "Set to 1 to stop writing prompt history and transcripts to disk. Such sessions won't appear in --resume, --continue or up-arrow history."
+ },
+ "CLAUDE_CODE_SKIP_VERTEX_AUTH": {
+  "kind": "bool",
+  "summary": "Bypasses Google auth for Google Cloud's Agent Platform, such as when traffic passes through an LLM gateway."
+ },
+ "CLAUDE_CODE_STARTUP_FAILURE_RESULTS": {
+  "kind": "bool",
+  "summary": "Set to 1 so a --output-format stream-json session emits a result message giving the reason when Claude Code refuses to start, not just stderr."
+ },
+ "CLAUDE_CODE_STOP_HOOK_BLOCK_CAP": {
+  "kind": "number",
+  "summary": "Most consecutive times a Stop or SubagentStop hook may block the turn ending before Claude Code ends it anyway. Default 8. Zero removes the cap."
+ },
+ "CLAUDE_CODE_SUBAGENT_MODEL": {
+  "kind": "model",
+  "summary": "Default model for subagents, teammates and workflow agents with no model assigned elsewhere. Takes an alias like haiku or a full name. A per-spawn or definition model wins."
+ },
+ "CLAUDE_CODE_SUBAGENT_MODEL_FORCE": {
+  "kind": "bool",
+  "summary": "Set to 1 to force a single model onto all subagents, teammates and workflow agents, using the model chosen by the subagent docs."
+ },
+ "CLAUDE_CODE_SUBAGENT_PROMPT_CACHE_TTL": {
+  "kind": "string",
+  "summary": "Picks 5m or 1h as the prompt cache lifetime for work outside the main conversation, like subagents, workflows and background tasks. FORCE_PROMPT_CACHING_5M beats it."
+ },
+ "CLAUDE_CODE_SUBPROCESS_ENV_SCRUB": {
+  "kind": "bool",
+  "summary": "Set to 1 to remove credentials from the environment of subprocesses that Claude Code launches, including hooks, stdio MCP servers and Bash commands. GitHub tokens and proxy settings remain."
+ },
+ "CLAUDE_CODE_SYNC_PLUGIN_INSTALL": {
+  "kind": "bool",
+  "summary": "Set to 1 in -p mode to wait for plugin installation before the first query, so plugins are ready on turn one."
+ },
+ "CLAUDE_CODE_SYNC_PLUGIN_INSTALL_TIMEOUT_MS": {
+  "kind": "duration",
+  "summary": "Milliseconds to wait on synchronous plugin installs. Once it runs out, Claude Code logs an error and continues without plugins. With no default, it waits indefinitely."
+ },
+ "CLAUDE_CODE_SYNC_SKILLS": {
+  "kind": "bool",
+  "summary": "Set to 1 to download the skills enabled on your claude.ai account. In -p mode it also waits briefly for the skill list before the first query. Needs claude.ai sign-in."
+ },
+ "CLAUDE_CODE_SYNC_SKILLS_INSTALL_TIMEOUT_MS": {
+  "kind": "duration",
+  "summary": "Timeout in milliseconds for the mid-session skills resync when an Agent SDK app reloads skills. Default 30000. Remaining downloads finish in the background."
+ },
+ "CLAUDE_CODE_SYNC_SKILLS_WAIT_TIMEOUT_MS": {
+  "kind": "duration",
+  "summary": "How long, in milliseconds, the first query waits for the initial skill list when CLAUDE_CODE_SYNC_SKILLS is set. Default 5000."
+ },
+ "CLAUDE_CODE_SYNTAX_HIGHLIGHT": {
+  "kind": "bool",
+  "summary": "Set to false to turn off syntax highlighting in diff output when colours clash with your terminal. The syntaxHighlightingDisabled setting also covers code blocks."
+ },
+ "CLAUDE_CODE_TASK_LIST_ID": {
+  "kind": "string",
+  "summary": "Shares one task list between sessions. Use the same ID in several Claude Code instances to coordinate on it, where the Task tools are available."
+ },
+ "CLAUDE_CODE_TMPDIR": {
+  "kind": "path",
+  "summary": "Overrides the temp directory for internal files. Claude Code adds a claude-{uid} subfolder on Unix. Default is /tmp on macOS, otherwise the OS temp directory."
+ },
+ "CLAUDE_CODE_TMUX_TRUECOLOR": {
+  "kind": "bool",
+  "summary": "Any non-empty value, even 0 or false, allows 24-bit colour inside tmux. Unset it to restore the 256-colour clamp. Needs a tmux terminal-overrides line."
+ },
+ "CLAUDE_CODE_TOOL_MEMORY_CGROUP_EXCLUDE": {
+  "kind": "list",
+  "summary": "On Linux and WSL, comma-separated process kinds (such as mcp or lsp) left out of the tool memory cap. Use none to cap all, or all-new for shell commands only."
+ },
+ "CLAUDE_CODE_TOOL_MEMORY_LIMIT": {
+  "kind": "string",
+  "summary": "On Linux and WSL, caps memory for shell and Monitor commands. Takes a size such as 4G (optional K, M, G or T suffix). Set 0 or off to disable."
+ },
+ "CLAUDE_CODE_TRANSCRIPT_LOCAL_GC": {
+  "kind": "bool",
+  "summary": "Set to 1 to keep long -p or SDK transcripts small by dropping pre-compaction history once the file passes 5 MB. Resuming still restores the same conversation."
+ },
+ "CLAUDE_CODE_USER_DIALOG_TIMEOUT_MS": {
+  "kind": "duration",
+  "summary": "Deadline in milliseconds before a dialog forwarded to a remote client, or a held cross-session message approval, is cancelled. Zero or negative disables it. Overrides dialogExpiry."
+ },
+ "CLAUDE_CODE_USE_ANTHROPIC_AWS": {
+  "kind": "bool",
+  "summary": "Enables Claude Platform on AWS as the model provider."
+ },
+ "CLAUDE_CODE_USE_BEDROCK": {
+  "kind": "bool",
+  "summary": "Enables Amazon Bedrock as the model provider."
+ },
+ "CLAUDE_CODE_USE_FOUNDRY": {
+  "kind": "bool",
+  "summary": "Enables Microsoft Foundry as the model provider."
+ },
+ "CLAUDE_CODE_USE_MANTLE": {
+  "kind": "bool",
+  "summary": "Enables the Amazon Bedrock Mantle endpoint as the model provider."
+ },
+ "CLAUDE_CODE_USE_POWERSHELL_TOOL": {
+  "kind": "bool",
+  "summary": "Controls the PowerShell tool. Auto-enabled on Windows without Git Bash. Set 1 to enable (needs pwsh on Linux, macOS and WSL) or 0 to disable."
+ },
+ "CLAUDE_CODE_USE_VERTEX": {
+  "kind": "bool",
+  "summary": "Enables Google Cloud's Agent Platform as the model provider."
+ },
+ "CLAUDE_CODE_WARN_DISK_FREE_GIB": {
+  "kind": "number",
+  "summary": "Whole GiB number. Claude Code warns when the working directory's filesystem has less free space than this. Unset, 0, or anything non-numeric disables it."
+ },
+ "CLAUDE_CODE_WARN_MEMORY_FREE_GIB": {
+  "kind": "number",
+  "summary": "On Linux and WSL, whole GiB of available memory below which Claude Code warns. Off if unset, 0 or not plain digits. Ignored when set via settings env."
+ },
+ "CLAUDE_CODE_WEBFETCH_CACHE_TTL_MS": {
+  "kind": "duration",
+  "summary": "Milliseconds WebFetch caches each fetched URL's response. Default 900000 (15 minutes). Plain digits only. Read once per launch."
+ },
+ "CLAUDE_CODE_WEBFETCH_DEADLINE_MS": {
+  "kind": "duration",
+  "summary": "Upper limit in milliseconds for a WebFetch download, redirects included. Default 300000 (five minutes). Zero removes the limit. Plain digits only."
+ },
+ "CLAUDE_CODE_WEB_SEARCH_REFILLS_PER_HOUR": {
+  "kind": "number",
+  "summary": "How many WebSearch calls per hour a session's limit regains. Default 100 interactively and 0 (no refill) in non-interactive sessions. Plain digits only."
+ },
+ "CLAUDE_CODE_WORKER_CHECKIN_SCHEDULE": {
+  "kind": "list",
+  "summary": "With CLAUDE_AUTO_BACKGROUND_TASKS on, comma-separated waits in seconds (1 to 86400) before each reminder to check running background subagents. The last value repeats."
+ },
+ "CLAUDE_CODE_WORKFLOW_MAX_CONCURRENT_AGENTS": {
+  "kind": "number",
+  "summary": "How many agents one workflow run executes at once, from 1 to 256. Default up to 16, fewer with fewer CPUs. Higher values use more memory."
+ },
+ "CLAUDE_CODE_WORKFLOW_PREFIX_STAGGER_MS": {
+  "kind": "duration",
+  "summary": "Longest wait, in milliseconds, for a workflow agent to hold back while a sibling sharing its prompt prefix begins responding, so it can use the cache. Default 5000. Zero disables."
+ },
+ "CLAUDE_CODE_YOU_SHOULD_KNOW_DEBUG": {
+  "kind": "bool",
+  "summary": "Set to 1 to show one line above the prompt for each of the latest three checks run by the You should know mod."
+ },
+ "CLAUDE_CONFIG_DIR": {
+  "kind": "path",
+  "summary": "Overrides the configuration directory (default ~/.claude), which holds settings, session history and plugins. Handy for running several accounts side by side."
+ },
+ "CLAUDE_EFFORT": {
+  "kind": "string",
+  "summary": "Set automatically in Bash subprocesses and hook commands to the current effort level: low, medium, high, xhigh or max. Only set when the model supports effort."
+ },
+ "CLAUDE_ENABLE_BYTE_WATCHDOG": {
+  "kind": "bool",
+  "summary": "Set to 1 to force on the byte-level streaming idle watchdog, or 0 to force it off, which also drops the first-byte deadline. Unset, it's on for most connections."
+ },
+ "CLAUDE_ENABLE_BYTE_WATCHDOG_BEDROCK": {
+  "kind": "bool",
+  "summary": "Set to 1 to turn on the byte-level streaming idle watchdog, and the first-byte deadline, for Amazon Bedrock streams. Off by default. Timeout comes from CLAUDE_STREAM_IDLE_TIMEOUT_MS."
+ },
+ "CLAUDE_ENABLE_STREAM_WATCHDOG": {
+  "kind": "bool",
+  "summary": "Set to 0 to force off the event-level streaming idle watchdog, or 1 to force it on. Unset, it's on for all providers."
+ },
+ "CLAUDE_ENV_FILE": {
+  "kind": "path",
+  "summary": "Path to a shell script run before every Bash command in the same shell, so its exports persist, such as virtualenv activation. Hooks can also fill it in."
+ },
+ "CLAUDE_JOB_DIR": {
+  "kind": "path",
+  "summary": "Set in each background session to its ~/.claude/jobs/<id> directory. Scratch files go in its tmp subfolder, where Write and Edit don't prompt. Removed with the session."
+ },
+ "CLAUDE_PID": {
+  "kind": "number",
+  "summary": "Set to Claude Code's own process ID in spawned Bash, PowerShell and hook subprocesses. Scripts can use it to identify or signal the parent process."
+ },
+ "CLAUDE_REMOTE_CONTROL_SESSION_NAME_PREFIX": {
+  "kind": "string",
+  "summary": "Prefix for auto-generated Remote Control session names when none is given. Defaults to the machine hostname. The matching CLI flag applies to one run."
+ },
+ "CLAUDE_STREAM_FIRST_BYTE_TIMEOUT_MS": {
+  "kind": "duration",
+  "summary": "Milliseconds to wait for a streaming request's first response byte, applying on connections where that deadline is in force."
+ },
+ "CLAUDE_STREAM_IDLE_TIMEOUT_MS": {
+  "kind": "duration",
+  "summary": "Milliseconds of silence before streaming idle watchdogs drop a stalled connection. Explicit values under 300000 are clamped up, and the byte watchdog caps it at 30 minutes."
+ },
+ "CLAUDE_SUBAGENT_BG_SHELL_MAX_MS": {
+  "kind": "duration",
+  "summary": "Removed and now does nothing. It used to cap how long a subagent's background shell command could run, with a 60 minute default."
+ },
+ "DEBUG": {
+  "kind": "bool",
+  "summary": "Set to 1, true, yes or on to enable debug mode, like --debug. Logs go to ~/.claude/debug/<session-id>.txt. Namespace patterns like express:* don't trigger it."
+ },
+ "DISABLE_AUTOUPDATER": {
+  "kind": "bool",
+  "summary": "Set to 1 to stop automatic background updates. Manual `claude update` still works. DISABLE_UPDATES blocks both."
+ },
+ "DISABLE_AUTO_COMPACT": {
+  "kind": "bool",
+  "summary": "Set to 1 to stop automatic and idle compaction near the context limit. Manual /compact still works. Overrides the autoCompactEnabled setting."
+ },
+ "DISABLE_COMPACT": {
+  "kind": "bool",
+  "summary": "Set to 1 to turn off all compaction, both automatic and the manual /compact command."
+ },
+ "DISABLE_COST_WARNINGS": {
+  "kind": "bool",
+  "summary": "Set to 1 to hide cost warning messages."
+ },
+ "DISABLE_DOCTOR_COMMAND": {
+  "kind": "bool",
+  "summary": "Set to 1 to hide the /doctor setup checkup skill and its /checkup alias, for managed deployments. The `claude doctor` terminal command is unaffected."
+ },
+ "DISABLE_ERROR_REPORTING": {
+  "kind": "bool",
+  "summary": "Any non-empty value, even 0 or false, opts out of error reporting. Unset the variable to turn reporting back on."
+ },
+ "DISABLE_EXTRA_USAGE_COMMAND": {
+  "kind": "bool",
+  "summary": "Set to 1 to hide the /usage-credits command used to buy extra usage beyond rate limits."
+ },
+ "DISABLE_FEEDBACK_COMMAND": {
+  "kind": "bool",
+  "summary": "Set to 1 to disable /feedback and Claude-drafted feedback, along with /bug and /share. The older name DISABLE_BUG_COMMAND is also accepted."
+ },
+ "DISABLE_GROWTHBOOK": {
+  "kind": "bool",
+  "summary": "Set to 1 to turn off feature-flag fetching. Superseded by CLAUDE_CODE_DISABLE_FEATURE_FLAGS, though this name still works."
+ },
+ "DISABLE_INSTALLATION_CHECKS": {
+  "kind": "bool",
+  "summary": "Set to 1 to hide installation warnings. Use only if you manage the install location yourself, since it can mask real problems."
+ },
+ "DISABLE_INSTALL_GITHUB_APP_COMMAND": {
+  "kind": "bool",
+  "summary": "Set to 1 to hide the /install-github-app command. It's already hidden on Bedrock, Google's Agent Platform and Foundry."
+ },
+ "DISABLE_INTERLEAVED_THINKING": {
+  "kind": "bool",
+  "summary": "Set to 1 to stop sending the interleaved-thinking beta header, for gateways or providers that don't support it."
+ },
+ "DISABLE_LOGIN_COMMAND": {
+  "kind": "bool",
+  "summary": "Set to 1 to hide the /login command, useful when authentication is handled by API keys or apiKeyHelper."
+ },
+ "DISABLE_LOGOUT_COMMAND": {
+  "kind": "bool",
+  "summary": "Set to 1 to hide the /logout command."
+ },
+ "DISABLE_PROMPT_CACHING": {
+  "kind": "bool",
+  "summary": "Set to 1 to turn off prompt caching for every model, taking precedence over the per-model switches."
+ },
+ "DISABLE_PROMPT_CACHING_FABLE": {
+  "kind": "bool",
+  "summary": "Set to 1 to turn off prompt caching for Fable models."
+ },
+ "DISABLE_PROMPT_CACHING_HAIKU": {
+  "kind": "bool",
+  "summary": "Set to 1 to turn off prompt caching for the default Haiku model, wherever it runs."
+ },
+ "DISABLE_PROMPT_CACHING_OPUS": {
+  "kind": "bool",
+  "summary": "Set to 1 to stop prompt caching on the default Opus model."
+ },
+ "DISABLE_PROMPT_CACHING_SONNET": {
+  "kind": "bool",
+  "summary": "Set to 1 to stop prompt caching on the default Sonnet model."
+ },
+ "DISABLE_TELEMETRY": {
+  "kind": "bool",
+  "summary": "Any non-empty value, even 0 or false, opts out of telemetry and feature-flag fetching. Unset it to turn telemetry back on. Events carry no code, paths or commands."
+ },
+ "DISABLE_UPDATES": {
+  "kind": "bool",
+  "summary": "Set to 1 to block every update, including manual `claude update` and `claude install`. Stricter than DISABLE_AUTOUPDATER, for self-distributed installs."
+ },
+ "DISABLE_UPGRADE_COMMAND": {
+  "kind": "bool",
+  "summary": "Set to 1 to hide the /upgrade command."
+ },
+ "DO_NOT_TRACK": {
+  "kind": "bool",
+  "summary": "Set to 1 to opt out of telemetry and feature-flag fetching, same as DISABLE_TELEMETRY. Read as a standard boolean, so 0 leaves telemetry on."
+ },
+ "ENABLE_BETA_TRACING_DETAILED": {
+  "kind": "bool",
+  "summary": "Set to 1 with BETA_TRACING_ENDPOINT pointing at an OTLP/HTTP collector to enable detailed beta tracing. Ignored in project and local settings."
+ },
+ "ENABLE_CLAUDEAI_MCP_SERVERS": {
+  "kind": "bool",
+  "summary": "Set to false to stop fetching claude.ai MCP servers, which are on by default for signed-in users. For per-project control use disableClaudeAiConnectors."
+ },
+ "ENABLE_PROMPT_CACHING_1H": {
+  "kind": "bool",
+  "summary": "Set to 1 to request a 1-hour prompt cache lifetime instead of 5 minutes. Meant for API key and third-party provider users. One-hour writes cost more."
+ },
+ "ENABLE_PROMPT_CACHING_1H_BEDROCK": {
+  "kind": "bool",
+  "summary": "Deprecated alias for ENABLE_PROMPT_CACHING_1H. It has no effect on Claude apps gateway sessions."
+ },
+ "ENABLE_TOOL_SEARCH": {
+  "kind": "string",
+  "summary": "Controls MCP tool search. Unset or true defers MCP tools, auto switches on at 10% of context, auto:N sets a custom percentage, false loads all tools upfront."
+ },
+ "FORCE_AUTOUPDATE_PLUGINS": {
+  "kind": "bool",
+  "summary": "Set to 1 to keep auto-updating plugins even when the main auto-updater is off through DISABLE_AUTOUPDATER."
+ },
+ "FORCE_HYPERLINK": {
+  "kind": "bool",
+  "summary": "Set to 1 to force clickable OSC 8 links where your terminal handles them but isn't auto-detected. Use 0, false, no or off for plain text instead."
+ },
+ "FORCE_PROMPT_CACHING_5M": {
+  "kind": "bool",
+  "summary": "Set to 1 to force the 5-minute prompt cache lifetime, overriding every other TTL variable and setting."
+ },
+ "HTTPS_PROXY": {
+  "kind": "url",
+  "summary": "Address of the HTTPS proxy server used for network connections."
+ },
+ "HTTP_PROXY": {
+  "kind": "url",
+  "summary": "Address of the HTTP proxy server used for network connections."
+ },
+ "IS_DEMO": {
+  "kind": "bool",
+  "summary": "Any non-empty value, even 0 or false, turns on demo mode: hides your email and organisation, and skips onboarding. Unset it to turn off. Good for streaming."
+ },
+ "MAX_MCP_OUTPUT_TOKENS": {
+  "kind": "number",
+  "summary": "Most tokens allowed in an MCP tool response. Default 25000, with a warning above 10000. Very long text results from unannotated tools are saved to a file."
+ },
+ "MAX_STRUCTURED_OUTPUT_RETRIES": {
+  "kind": "number",
+  "summary": "How many attempts are allowed when a response fails --json-schema validation in -p mode, and for workflow subagent structured output. Default 5, one try plus four retries."
+ },
+ "MAX_THINKING_TOKENS": {
+  "kind": "number",
+  "summary": "A set extended-thinking budget, held just below max output tokens and at least 1,024. Adaptive models disregard the figure. Zero turns thinking off where that is allowed."
+ },
+ "MCP_CLIENT_SECRET": {
+  "kind": "string",
+  "summary": "Client secret for OAuth on MCP servers needing preset credentials. Spares you the interactive prompt if you register a server via --client-secret."
+ },
+ "MCP_CONNECTION_NONBLOCKING": {
+  "kind": "bool",
+  "summary": "MCP servers connect in the background by default. Set to 0 to make startup wait for them before the first query. alwaysLoad servers still cause a wait."
+ },
+ "MCP_CONNECT_TIMEOUT_MS": {
+  "kind": "duration",
+  "summary": "Milliseconds blocking MCP startup waits for the connection batch before capturing the tool list. Default 5000. Slow servers keep connecting in the background."
+ },
+ "MCP_DISCOVERY_CACHE": {
+  "kind": "bool",
+  "summary": "Turns the MCP discovery cache on (1) or off (0). When on, remote servers connect on first tool call. Off by default unless rolled out to your account."
+ },
+ "MCP_DISCOVERY_CACHE_MAX_STALE_S": {
+  "kind": "duration",
+  "summary": "Oldest age, in seconds, of a discovery-cache entry before it's discarded and the server connects at startup. Default 14400 (4 hours), capped at 7 days."
+ },
+ "MCP_DISCOVERY_CACHE_STRIKES": {
+  "kind": "number",
+  "summary": "How many background cache refreshes in a row may fail before the entry is discarded and the server connects at the next start. Default 1."
+ },
+ "MCP_DISCOVERY_CACHE_TTL_S": {
+  "kind": "duration",
+  "summary": "Seconds a discovery-cache entry is used without refreshing. Default 900. Older entries are used but refreshed in the background. Capped at the max-stale value."
+ },
+ "MCP_OAUTH_CALLBACK_PORT": {
+  "kind": "number",
+  "summary": "Pins the port of the OAuth redirect callback when you add an MCP server with preset credentials. Can be used rather than --callback-port."
+ },
+ "MCP_PROTOCOL_NEGOTIATION": {
+  "kind": "string",
+  "summary": "On the v2 MCP client only, controls probing for protocol revision 2026-07-28. Use legacy to keep the earlier handshake, or auto to probe supporting servers."
+ },
+ "MCP_REMOTE_SERVER_CONNECTION_BATCH_SIZE": {
+  "kind": "number",
+  "summary": "Most remote MCP servers (HTTP or SSE) connected in parallel at startup. Default 20."
+ },
+ "MCP_SDK_GENERATION": {
+  "kind": "string",
+  "summary": "Pins the MCP client runtime to v1 (TypeScript SDK 1.x) or v2 (SDK 2.0). Unset uses v2. Unrecognised values are ignored with a debug warning."
+ },
+ "MCP_SERVER_CONNECTION_BATCH_SIZE": {
+  "kind": "number",
+  "summary": "Most local stdio MCP servers connected in parallel at startup. Default 3."
+ },
+ "MCP_TIMEOUT": {
+  "kind": "duration",
+  "summary": "Milliseconds allowed for an MCP server to start up. Defaults to 30000 (30 seconds)."
+ },
+ "MCP_TOOL_TIMEOUT": {
+  "kind": "duration",
+  "summary": "Milliseconds allowed for an MCP tool to run. Defaults to 100000000 (roughly 28 hours). HTTP and SSE calls also face a 60 second per-request cap unless this is above 60000."
+ },
+ "NO_PROXY": {
+  "kind": "list",
+  "summary": "List of domains and IPs that bypass the proxy and are contacted directly."
+ },
+ "OTEL_ATTRIBUTE_VALUE_LENGTH_LIMIT": {
+  "kind": "number",
+  "summary": "Standard OpenTelemetry limit on attribute value length. Content attributes are capped at the smaller of this and CLAUDE_CODE_OTEL_CONTENT_MAX_LENGTH. Log and span variants work likewise."
+ },
+ "OTEL_LOG_ASSISTANT_RESPONSES": {
+  "kind": "bool",
+  "summary": "Set to 1 to include the model's reply text in assistant_response log events. Unset follows OTEL_LOG_USER_PROMPTS. Set 0 to keep replies redacted. Ignored in project settings."
+ },
+ "OTEL_LOG_MANAGED_SETTINGS": {
+  "kind": "bool",
+  "summary": "Set to 1 so managed_settings_resolved log events include the managed settings with secrets redacted, plus a SHA-256 hash of the original. Off by default."
+ },
+ "OTEL_LOG_RAW_API_BODIES": {
+  "kind": "string",
+  "summary": "Logs Messages API requests and responses as JSON events. Use 1 for truncated inline bodies, or file:<dir> for complete bodies on disk. Off by default."
+ },
+ "OTEL_LOG_TOOL_CONTENT": {
+  "kind": "bool",
+  "summary": "Set to 1 to include tool content in the tool.output span event. Needs tracing enabled. Off by default to protect sensitive data."
+ },
+ "OTEL_LOG_TOOL_DETAILS": {
+  "kind": "bool",
+  "summary": "Set to 1 to add tool arguments, MCP server names, raw error strings and real agent, skill and plugin names to telemetry. Off by default to protect personal data."
+ },
+ "OTEL_LOG_USER_PROMPTS": {
+  "kind": "bool",
+  "summary": "Set to 1 to include prompt text in OpenTelemetry traces and logs. Prompts are redacted by default. Ignored in project and local settings."
+ },
+ "OTEL_METRICS_INCLUDE_ACCOUNT_UUID": {
+  "kind": "bool",
+  "summary": "Set to false to leave the account UUID out of metric and event attributes. Included by default."
+ },
+ "OTEL_METRICS_INCLUDE_ENTRYPOINT": {
+  "kind": "bool",
+  "summary": "Set to true to add the session entrypoint to metric and event attributes. Excluded by default."
+ },
+ "OTEL_METRICS_INCLUDE_REPOSITORY": {
+  "kind": "bool",
+  "summary": "Set to true to tag metrics and events with vcs.* attributes naming the session's repository. Excluded by default."
+ },
+ "OTEL_METRICS_INCLUDE_RESOURCE_ATTRIBUTES": {
+  "kind": "bool",
+  "summary": "Claude Code attaches OTEL_RESOURCE_ATTRIBUTES keys to metric datapoint labels. Set to false to leave them off. Included by default."
+ },
+ "OTEL_METRICS_INCLUDE_SESSION_ID": {
+  "kind": "bool",
+  "summary": "Set to false to leave the session ID out of metric and event attributes. Included by default."
+ },
+ "OTEL_METRICS_INCLUDE_VERSION": {
+  "kind": "bool",
+  "summary": "Set to true to add the Claude Code version to metric and event attributes. Excluded by default."
+ },
+ "SLASH_COMMAND_TOOL_CHAR_BUDGET": {
+  "kind": "number",
+  "summary": "Replaces the character allowance for skill metadata exposed to the Skill tool. By default that is 1% of the context window, or 8,000 if unknown. A legacy name."
+ },
+ "TASK_MAX_OUTPUT_LENGTH": {
+  "kind": "number",
+  "summary": "Removed and now does nothing, along with the TaskOutput tool. It used to limit how many characters of background task output were kept."
+ },
+ "USE_BUILTIN_RIPGREP": {
+  "kind": "bool",
+  "summary": "Set to 0 to use your system's rg instead of the copy bundled with Claude Code."
+ },
+ "VERTEX_REGION_CLAUDE_3_5_HAIKU": {
+  "kind": "string",
+  "summary": "Region override for Claude 3.5 Haiku on Google Cloud's Agent Platform."
+ },
+ "VERTEX_REGION_CLAUDE_3_5_SONNET": {
+  "kind": "string",
+  "summary": "Region override for Claude 3.5 Sonnet on Google Cloud's Agent Platform."
+ },
+ "VERTEX_REGION_CLAUDE_3_7_SONNET": {
+  "kind": "string",
+  "summary": "Region override for Claude 3.7 Sonnet on Google Cloud's Agent Platform."
+ },
+ "VERTEX_REGION_CLAUDE_4_0_OPUS": {
+  "kind": "string",
+  "summary": "Region override for Claude Opus 4 on Google Cloud's Agent Platform."
+ },
+ "VERTEX_REGION_CLAUDE_4_0_SONNET": {
+  "kind": "string",
+  "summary": "Region override for Claude Sonnet 4 on Google Cloud's Agent Platform."
+ },
+ "VERTEX_REGION_CLAUDE_4_1_OPUS": {
+  "kind": "string",
+  "summary": "Region override for Claude Opus 4.1 on Google Cloud's Agent Platform."
+ },
+ "VERTEX_REGION_CLAUDE_4_5_OPUS": {
+  "kind": "string",
+  "summary": "Region override for Claude Opus 4.5 on Google Cloud's Agent Platform."
+ },
+ "VERTEX_REGION_CLAUDE_4_5_SONNET": {
+  "kind": "string",
+  "summary": "Region override for Claude Sonnet 4.5 on Google Cloud's Agent Platform."
+ },
+ "VERTEX_REGION_CLAUDE_4_6_OPUS": {
+  "kind": "string",
+  "summary": "Region override for Claude Opus 4.6 on Google Cloud's Agent Platform."
+ },
+ "VERTEX_REGION_CLAUDE_4_6_SONNET": {
+  "kind": "string",
+  "summary": "Region override for Claude Sonnet 4.6 on Google Cloud's Agent Platform."
+ },
+ "VERTEX_REGION_CLAUDE_4_7_OPUS": {
+  "kind": "string",
+  "summary": "Region override for Claude Opus 4.7 on Google Cloud's Agent Platform."
+ },
+ "VERTEX_REGION_CLAUDE_4_8_OPUS": {
+  "kind": "string",
+  "summary": "Region override for Claude Opus 4.8 on Google Cloud's Agent Platform."
+ },
+ "VERTEX_REGION_CLAUDE_5_5_OPUS": {
+  "kind": "string",
+  "summary": "Region override for Claude Opus 5.5 on Google Cloud's Agent Platform."
+ },
+ "VERTEX_REGION_CLAUDE_5_5_SONNET": {
+  "kind": "string",
+  "summary": "Region override for Claude Sonnet 5.5 on Google Cloud's Agent Platform."
+ },
+ "VERTEX_REGION_CLAUDE_5_OPUS": {
+  "kind": "string",
+  "summary": "Region override for Claude Opus 5 on Google Cloud's Agent Platform."
+ },
+ "VERTEX_REGION_CLAUDE_5_SONNET": {
+  "kind": "string",
+  "summary": "Region override for Claude Sonnet 5 on Google Cloud's Agent Platform."
+ },
+ "VERTEX_REGION_CLAUDE_FABLE_5": {
+  "kind": "string",
+  "summary": "Region override for Claude Fable 5 on Google Cloud's Agent Platform."
+ },
+ "VERTEX_REGION_CLAUDE_FABLE_5_1": {
+  "kind": "string",
+  "summary": "Region override for Claude Fable 5.1 on Google Cloud's Agent Platform."
+ },
+ "VERTEX_REGION_CLAUDE_FABLE_5_2": {
+  "kind": "string",
+  "summary": "Region override for Claude Fable 5.2 on Google Cloud's Agent Platform."
+ },
+ "VERTEX_REGION_CLAUDE_HAIKU_4_5": {
+  "kind": "string",
+  "summary": "Region override for Claude Haiku 4.5 on Google Cloud's Agent Platform."
+ },
+ "VERTEX_REGION_CLAUDE_HAIKU_5_5": {
+  "kind": "string",
+  "summary": "Region override for Claude Haiku 5.5 on Google Cloud's Agent Platform."
+ }
+}
