@@ -1,6 +1,6 @@
 {
  "format": 1,
- "generated": "2026-11-16T07:19:45Z",
+ "generated": "2026-11-17T22:57:40Z",
  "tools": {
   "claude-code": {
    "docs": {
@@ -198,6 +198,26 @@
      "kind": "string",
      "name": "ANTHROPIC_FOUNDRY_RESOURCE",
      "summary": "Microsoft Foundry resource name, not a URL or host name. Required unless ANTHROPIC_FOUNDRY_BASE_URL is set."
+    },
+    {
+     "kind": "url",
+     "name": "ANTHROPIC_GOOGLE_CLOUD_BASE_URL",
+     "summary": "Override the endpoint URL for Claude models hosted on Google Cloud by Anthropic, such as when using an LLM gateway."
+    },
+    {
+     "kind": "string",
+     "name": "ANTHROPIC_GOOGLE_CLOUD_LOCATION",
+     "summary": "Sets the Google Cloud location used in the request URL for Anthropic managed Claude on Google Cloud. Defaults to `global`."
+    },
+    {
+     "kind": "string",
+     "name": "ANTHROPIC_GOOGLE_CLOUD_PROJECT",
+     "summary": "Specifies the Google Cloud project ID for Anthropic managed Claude on Google Cloud."
+    },
+    {
+     "kind": "string",
+     "name": "ANTHROPIC_GOOGLE_CLOUD_WORKSPACE_ID",
+     "summary": "Sets the workspace ID for Anthropic managed Claude on Google Cloud. Required unless you use v2.1.307 or later with `ANTHROPIC_GOOGLE_CLOUD_BASE_URL` set."
     },
     {
      "kind": "model",
@@ -644,7 +664,7 @@
     {
      "kind": "bool",
      "name": "CLAUDE_CODE_DISABLE_LEGACY_MODEL_REMAP",
-     "summary": "Set to 1 to stop Opus 4 and Opus 4.1 being remapped to the current Opus on the Anthropic API. Useful when deliberately pinning an old model."
+     "summary": "Set to 1 to stop Opus 4 plus Opus 4.1 being automatically remapped to the present Opus build via the Anthropic API."
     },
     {
      "kind": "bool",
@@ -684,7 +704,7 @@
     {
      "kind": "bool",
      "name": "CLAUDE_CODE_DISABLE_NONSTREAMING_FALLBACK",
-     "summary": "Set to 1 to disable the non-streaming fallback after a mid-stream failure, so errors go to the retry layer. Helps when a proxy causes duplicate tool execution."
+     "summary": "Set to 1 to turn off the non-streaming fallback after a streaming request fails midway. Helps when a proxy or gateway makes that fallback duplicate tool execution."
     },
     {
      "kind": "bool",
@@ -740,6 +760,11 @@
      "kind": "bool",
      "name": "CLAUDE_CODE_DISABLE_ULTRAREVIEW_TRUST_CHECK",
      "summary": "Set to 1 so claude ultrareview skips the Workspace not trusted exit in an untrusted folder that cannot prompt, such as CI. Set in the launching environment. Needs v2.1.309+."
+    },
+    {
+     "kind": "bool",
+     "name": "CLAUDE_CODE_DISABLE_ULTRATHINK",
+     "summary": "Set to `1` to disable the `ultrathink` keyword. Needs v2.1.316 or later of Claude Code."
     },
     {
      "kind": "bool",
@@ -990,7 +1015,7 @@
     {
      "kind": "number",
      "name": "CLAUDE_CODE_MAX_OUTPUT_TOKENS",
-     "summary": "Caps output tokens on most requests. Defaults and caps differ per model, and higher values get cut down. Unrecognised models default to 32000. More output means less usable context."
+     "summary": "Sets maximum output tokens for most requests. Limits differ by model, over-cap values are reduced, and unrecognised model IDs get 32000 with a 128000 ceiling."
     },
     {
      "kind": "number",
@@ -1312,7 +1337,7 @@
     {
      "kind": "bool",
      "name": "CLAUDE_CODE_SIMPLE",
-     "summary": "Set to 1 for a minimal system prompt with only Bash, file read and file edit tools. Skips hooks, skills, plugins, MCP discovery, memory and CLAUDE.md. Same as --bare."
+     "summary": "Set to 1 for a minimal system prompt, Bash, file read, file edit tools. MCP tools --mcp-config remain. OAuth, keychain credentials are ignored; set ANTHROPIC_API_KEY or apiKeyHelper. Same as --bare."
     },
     {
      "kind": "bool",
@@ -1323,6 +1348,11 @@
      "kind": "bool",
      "name": "CLAUDE_CODE_SKIP_ANTHROPIC_AWS_AUTH",
      "summary": "Bypasses client-side auth for Claude Platform on AWS, useful when a gateway signs the requests itself."
+    },
+    {
+     "kind": "bool",
+     "name": "CLAUDE_CODE_SKIP_ANTHROPIC_GOOGLE_CLOUD_AUTH",
+     "summary": "Skip Google Cloud authentication for Anthropic managed Claude on Google Cloud, for gateways that supply credentials themselves."
     },
     {
      "kind": "bool",
@@ -1468,6 +1498,11 @@
      "kind": "bool",
      "name": "CLAUDE_CODE_USE_ANTHROPIC_AWS",
      "summary": "Enables Claude Platform on AWS as the model provider."
+    },
+    {
+     "kind": "bool",
+     "name": "CLAUDE_CODE_USE_ANTHROPIC_GOOGLE_CLOUD",
+     "summary": "Turn on Anthropic managed Claude on Google Cloud."
     },
     {
      "kind": "bool",
@@ -2102,6 +2137,7 @@
      "claude-fable-5-2",
      "claude-haiku-4-5",
      "claude-haiku-5-5",
+     "claude-opus-4-1",
      "claude-opus-4-6",
      "claude-opus-4-7",
      "claude-opus-4-8",
