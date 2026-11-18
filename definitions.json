@@ -1,6 +1,6 @@
 {
  "format": 1,
- "generated": "2026-11-17T22:57:40Z",
+ "generated": "2026-11-18T22:38:07Z",
  "tools": {
   "claude-code": {
    "docs": {
@@ -175,9 +175,9 @@
      "summary": "Lists, separated by commas, what the pinned Sonnet model can do, such as effort,thinking."
     },
     {
-     "kind": "string",
+     "kind": "list",
      "name": "ANTHROPIC_FEDERATION_RULE_ID",
-     "summary": "Federation rule ID for Workload Identity Federation. Set together with ANTHROPIC_ORGANIZATION_ID to select federation credentials, which outrank a /login credential."
+     "summary": "This is the Workload Identity Federation rule ID. Set it with ANTHROPIC_ORGANIZATION_ID and see authentication precedence."
     },
     {
      "kind": "string",
@@ -732,6 +732,11 @@
      "summary": "Set to 1 to turn off the PowerShell tool check denying cmd built-ins rd, rmdir, del and erase on system paths. Ignored in settings env blocks. Needs v2.1.283+."
     },
     {
+     "kind": "list",
+     "name": "CLAUDE_CODE_DISABLE_PROXY_SCHEME_REPAIR",
+     "summary": "Set to 1 so Claude Code stops at startup on a plain host:port in HTTPS_PROXY or https_proxy with no terminal. Ignored in project and local settings; needs v2.1.327 or later."
+    },
+    {
      "kind": "bool",
      "name": "CLAUDE_CODE_DISABLE_REFUSAL_FALLBACK",
      "summary": "Set to 1 to stop Claude Code switching models on its own if the safety classifier flags a request. The switchModelsOnFlag setting does likewise."
@@ -1099,9 +1104,9 @@
      "summary": "Set to 1 to turn on fullscreen rendering, a research preview that cuts flicker and keeps memory steady in long chats. Overrides the tui setting."
     },
     {
-     "kind": "string",
+     "kind": "list",
      "name": "CLAUDE_CODE_OAUTH_REFRESH_TOKEN",
-     "summary": "claude.ai refresh token that `claude auth login` exchanges directly instead of opening a browser. Needs CLAUDE_CODE_OAUTH_SCOPES. Ignored in project and local settings."
+     "summary": "Supplies a one-use OAuth refresh token so claude auth login can exchange it without a browser. Requires CLAUDE_CODE_OAUTH_SCOPES; each swap replaces the token and project or local settings ignore it."
     },
     {
      "kind": "list",
@@ -1966,6 +1971,11 @@
      "kind": "bool",
      "name": "OTEL_METRICS_INCLUDE_VERSION",
      "summary": "Set to true to add the Claude Code version to metric and event attributes. Excluded by default."
+    },
+    {
+     "kind": "list",
+     "name": "OTEL_RESOURCE_INCLUDE_HOST",
+     "summary": "Set to 1 to add machine name and ID as host.name and host.id in OpenTelemetry attributes (default excluded). Use shell, user or managed settings only; needs v2.1.326 or later."
     },
     {
      "kind": "number",

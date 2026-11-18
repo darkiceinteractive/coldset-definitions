@@ -132,8 +132,8 @@
   "summary": "Lists, separated by commas, what the pinned Sonnet model can do, such as effort,thinking."
  },
  "ANTHROPIC_FEDERATION_RULE_ID": {
-  "kind": "string",
-  "summary": "Federation rule ID for Workload Identity Federation. Set together with ANTHROPIC_ORGANIZATION_ID to select federation credentials, which outrank a /login credential."
+  "kind": "list",
+  "summary": "This is the Workload Identity Federation rule ID. Set it with ANTHROPIC_ORGANIZATION_ID and see authentication precedence."
  },
  "ANTHROPIC_FOUNDRY_API_KEY": {
   "kind": "string",
@@ -571,6 +571,10 @@
   "kind": "bool",
   "summary": "Set to 1 to turn off the PowerShell tool check denying cmd built-ins rd, rmdir, del and erase on system paths. Ignored in settings env blocks. Needs v2.1.283+."
  },
+ "CLAUDE_CODE_DISABLE_PROXY_SCHEME_REPAIR": {
+  "kind": "list",
+  "summary": "Set to 1 so Claude Code stops at startup on a plain host:port in HTTPS_PROXY or https_proxy with no terminal. Ignored in project and local settings; needs v2.1.327 or later."
+ },
  "CLAUDE_CODE_DISABLE_REFUSAL_FALLBACK": {
   "kind": "bool",
   "summary": "Set to 1 to stop Claude Code switching models on its own if the safety classifier flags a request. The switchModelsOnFlag setting does likewise."
@@ -864,8 +868,8 @@
   "summary": "Set to 1 to turn on fullscreen rendering, a research preview that cuts flicker and keeps memory steady in long chats. Overrides the tui setting."
  },
  "CLAUDE_CODE_OAUTH_REFRESH_TOKEN": {
-  "kind": "string",
-  "summary": "claude.ai refresh token that `claude auth login` exchanges directly instead of opening a browser. Needs CLAUDE_CODE_OAUTH_SCOPES. Ignored in project and local settings."
+  "kind": "list",
+  "summary": "Supplies a one-use OAuth refresh token so claude auth login can exchange it without a browser. Requires CLAUDE_CODE_OAUTH_SCOPES; each swap replaces the token and project or local settings ignore it."
  },
  "CLAUDE_CODE_OAUTH_SCOPES": {
   "kind": "list",
@@ -1554,6 +1558,10 @@
  "OTEL_METRICS_INCLUDE_VERSION": {
   "kind": "bool",
   "summary": "Set to true to add the Claude Code version to metric and event attributes. Excluded by default."
+ },
+ "OTEL_RESOURCE_INCLUDE_HOST": {
+  "kind": "list",
+  "summary": "Set to 1 to add machine name and ID as host.name and host.id in OpenTelemetry attributes (default excluded). Use shell, user or managed settings only; needs v2.1.326 or later."
  },
  "SLASH_COMMAND_TOOL_CHAR_BUDGET": {
   "kind": "number",
