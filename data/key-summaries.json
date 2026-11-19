@@ -66,7 +66,7 @@
   "summary": "Disables Desktop Code sessions running on the device, leaving SSH for other hosts and cloud."
  },
  "disableRemotePreviewScripts": {
-  "summary": "Disables scripts in the desktop app's HTML previews for SSH and WSL sessions."
+  "summary": "Stops scripts running in the Browser pane HTML previews during SSH and WSL sessions in the desktop app."
  },
  "enableWorkflows": {
   "summary": "Enables or disables dynamic workflows, overriding your plan's default."
@@ -114,7 +114,7 @@
   "summary": "Approve the listed tool uses without asking for confirmation."
  },
  "permissions.ask": {
-  "summary": "Always ask for confirmation before the listed tool uses."
+  "summary": "Ask for approval before running any tool use you list."
  },
  "permissions.blockReadsOutsideWorkingDirectories": {
   "summary": "Make file tools reject reads outside the working directories in all permission modes."

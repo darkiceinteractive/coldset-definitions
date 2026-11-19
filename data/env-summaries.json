@@ -328,8 +328,8 @@
   "summary": "Removed in v2.1.283. Use CLAUDE_CODE_WORKER_CHECKIN_SCHEDULE instead."
  },
  "CLAUDE_CODE_AUTO_COMPACT_WINDOW": {
-  "kind": "number",
-  "summary": "Auto-compact window, meaning how full context gets before compaction, from 100000 to 1000000 tokens. Suffixed values such as 200k need v2.1.304+."
+  "kind": "list",
+  "summary": "Sets when auto-compaction triggers by token count; must be 100000 or higher. Suffixed forms such as 200k need v2.1.304 or later."
  },
  "CLAUDE_CODE_AUTO_CONNECT_IDE": {
   "kind": "bool",
@@ -479,6 +479,10 @@
   "kind": "bool",
   "summary": "Set to 1 to drop the auto and bypassPermissions time limit and denials on critical-path removals. Set in the launching environment. Needs v2.1.281+."
  },
+ "CLAUDE_CODE_DISABLE_DEFERRED_TOOL_RESUME": {
+  "kind": "list",
+  "summary": "Set to 1 to avoid replaying a deferred tool call when resuming or continuing with -p. Claude may still repeat it; ignored in settings env block; needs v2.1.328 or later."
+ },
  "CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS": {
   "kind": "bool",
   "summary": "Set to 1 to strip pre-release anthropic-beta headers, their body fields and beta tool-schema fields from requests. Use when a gateway rejects them. Also removes MCP tool search."
@@ -596,8 +600,8 @@
   "summary": "Set to 1 to omit the thinking parameter from API requests, for gateways that reject it. Models that think by default may still think. MAX_THINKING_TOKENS=0 disables it properly."
  },
  "CLAUDE_CODE_DISABLE_ULTRAREVIEW_TRUST_CHECK": {
-  "kind": "bool",
-  "summary": "Set to 1 so claude ultrareview skips the Workspace not trusted exit in an untrusted folder that cannot prompt, such as CI. Set in the launching environment. Needs v2.1.309+."
+  "kind": "list",
+  "summary": "Set to 1 so claude ultrareview avoids the workspace trust error without a terminal or with CI=true. From v2.1.314 it also covers /ultrareview and /code-review ultra; needs v2.1.309 or later."
  },
  "CLAUDE_CODE_DISABLE_ULTRATHINK": {
   "kind": "bool",
@@ -1114,6 +1118,10 @@
  "CLAUDE_CODE_STOP_HOOK_BLOCK_CAP": {
   "kind": "number",
   "summary": "Most consecutive times a Stop or SubagentStop hook may block the turn ending before Claude Code ends it anyway. Default 8. Zero removes the cap."
+ },
+ "CLAUDE_CODE_STRICT_INLINE_SHELL_RM_PROMPT": {
+  "kind": "list",
+  "summary": "Set to 1 to flag more unchecked -c scripts, including ones without rm or rmdir. Launch env only; no effect when CLAUDE_CODE_DISABLE_INLINE_SHELL_RM_PROMPT is 1; needs v2.1.299 or later."
  },
  "CLAUDE_CODE_SUBAGENT_MODEL": {
   "kind": "model",
