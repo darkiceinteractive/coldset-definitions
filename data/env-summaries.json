@@ -457,7 +457,7 @@
  },
  "CLAUDE_CODE_DISABLE_BG_STABLE_PATH": {
   "kind": "bool",
-  "summary": "macOS native installer only. Set to 1 to run background session hosts from the installed binary, not ClaudeCode.app, which may re-prompt for folder access. Needs v2.1.295+."
+  "summary": "On macOS native installs, setting this to 1 runs background session host processes from the installed binary instead of ~/.local/share/claude/ClaudeCode.app; macOS may re-ask for permissions. Needs v2.1.295 or later."
  },
  "CLAUDE_CODE_DISABLE_BUNDLED_SKILLS": {
   "kind": "bool",
@@ -597,7 +597,7 @@
  },
  "CLAUDE_CODE_DISABLE_THINKING": {
   "kind": "bool",
-  "summary": "Set to 1 to omit the thinking parameter from API requests, for gateways that reject it. Models that think by default may still think. MAX_THINKING_TOKENS=0 disables it properly."
+  "summary": "Setting this to 1 omits the thinking parameter from API requests for main turns, subagent turns and compaction summaries. For the Anthropic API, MAX_THINKING_TOKENS=0 turns off extended thinking."
  },
  "CLAUDE_CODE_DISABLE_ULTRAREVIEW_TRUST_CHECK": {
   "kind": "list",
@@ -790,6 +790,10 @@
  "CLAUDE_CODE_IDLE_COMPACT_MIN_TOKENS": {
   "kind": "number",
   "summary": "Token count where idle compaction starts. Default 200000; values under 100000 are lifted to that, and non-numbers are ignored. Disable via idleCompaction false. Needs v2.1.290+."
+ },
+ "CLAUDE_CODE_LOOP_KEEPALIVE": {
+  "kind": "bool",
+  "summary": "Setting this to 1 adds one more iteration to an interactive self-paced /loop if its second or later pass finishes with nothing scheduled."
  },
  "CLAUDE_CODE_MAX_CONCURRENT_SUBAGENTS": {
   "kind": "number",
@@ -1122,6 +1126,14 @@
  "CLAUDE_CODE_STRICT_INLINE_SHELL_RM_PROMPT": {
   "kind": "list",
   "summary": "Set to 1 to flag more unchecked -c scripts, including ones without rm or rmdir. Launch env only; no effect when CLAUDE_CODE_DISABLE_INLINE_SHELL_RM_PROMPT is 1; needs v2.1.299 or later."
+ },
+ "CLAUDE_CODE_SUBAGENT_EFFORT": {
+  "kind": "string",
+  "summary": "The default effort for subagents and workflow agents is low, medium, high, xhigh or max. It does not affect forks, forked skills or teammates. Needs v2.1.315 or later."
+ },
+ "CLAUDE_CODE_SUBAGENT_HISTORY": {
+  "kind": "bool",
+  "summary": "Setting this to 0 removes the /tasks row used to reopen subagents that have ended."
  },
  "CLAUDE_CODE_SUBAGENT_MODEL": {
   "kind": "model",
