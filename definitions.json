@@ -1,6 +1,6 @@
 {
  "format": 1,
- "generated": "2026-11-20T22:15:36Z",
+ "generated": "2026-11-21T20:55:26Z",
  "tools": {
   "claude-code": {
    "docs": {
@@ -935,12 +935,17 @@
     {
      "kind": "bool",
      "name": "CLAUDE_CODE_FORK_SUBAGENT",
-     "summary": "Controls fork mode, on by default, which lets Claude start forks itself and stops it waiting for subagents in interactive sessions. Set to 0 to turn it off."
+     "summary": "Controls fork mode, enabled by default, letting Claude create forks itself. Set to 0 to disable it, for example so Claude waits for a subagent."
     },
     {
      "kind": "bool",
      "name": "CLAUDE_CODE_FORWARD_SUBAGENT_TEXT",
      "summary": "Set to 1 to emit subagent text and thinking blocks in claude -p stream-json output, like --forward-subagent-text. Ignored outside that mode. Needs v2.1.211+."
+    },
+    {
+     "kind": "bool",
+     "name": "CLAUDE_CODE_FULL_SIGN_IN_LINK",
+     "summary": "Set to 1 to show the full claude.ai sign-in URL, not the short one. Use it if the short link fails or a script extracts values from that URL."
     },
     {
      "kind": "bool",
@@ -1570,9 +1575,9 @@
      "summary": "On Linux and WSL, whole GiB of available memory below which Claude Code warns. Off if unset, 0 or not plain digits. Ignored when set via settings env."
     },
     {
-     "kind": "duration",
+     "kind": "number",
      "name": "CLAUDE_CODE_WEBFETCH_CACHE_TTL_MS",
-     "summary": "Milliseconds WebFetch caches each fetched URL's response. Default 900000 (15 minutes). Plain digits only. Read once per launch."
+     "summary": "Sets the cache lifetime for pages fetched by WebFetch, in milliseconds. The default is 900000 (15 minutes); plain digits only, and changes take effect on the next launch."
     },
     {
      "kind": "duration",
@@ -2543,6 +2548,11 @@
      "enabledPlugins": {
       "scope": "Any file",
       "topic": "Plugins and skills"
+     },
+     "enforceAnthropicSignIn": {
+      "scope": "Managed",
+      "summary": "Requires signing in to claude.ai for Anthropic's API, or through an Enterprise Admin Console account, and blocks other login methods when on.",
+      "topic": "Authentication and providers"
      },
      "enforceAvailableModels": {
       "scope": "Any file",
@@ -8706,6 +8716,7 @@
        "apiKeyHelper",
        "awsAuthRefresh",
        "awsCredentialExport",
+       "enforceAnthropicSignIn",
        "forceLoginGatewayUrl",
        "forceLoginMethod",
        "forceLoginOrgUUID",

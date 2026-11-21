@@ -71,6 +71,9 @@
  "enableWorkflows": {
   "summary": "Enables or disables dynamic workflows, overriding your plan's default."
  },
+ "enforceAnthropicSignIn": {
+  "summary": "Requires signing in to claude.ai for Anthropic's API, or through an Enterprise Admin Console account, and blocks other login methods when on."
+ },
  "feedbackDrafts": {
   "summary": "Controls whether Claude queues feedback drafts for your review."
  },

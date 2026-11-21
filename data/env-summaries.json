@@ -733,11 +733,15 @@
  },
  "CLAUDE_CODE_FORK_SUBAGENT": {
   "kind": "bool",
-  "summary": "Controls fork mode, on by default, which lets Claude start forks itself and stops it waiting for subagents in interactive sessions. Set to 0 to turn it off."
+  "summary": "Controls fork mode, enabled by default, letting Claude create forks itself. Set to 0 to disable it, for example so Claude waits for a subagent."
  },
  "CLAUDE_CODE_FORWARD_SUBAGENT_TEXT": {
   "kind": "bool",
   "summary": "Set to 1 to emit subagent text and thinking blocks in claude -p stream-json output, like --forward-subagent-text. Ignored outside that mode. Needs v2.1.211+."
+ },
+ "CLAUDE_CODE_FULL_SIGN_IN_LINK": {
+  "kind": "bool",
+  "summary": "Set to 1 to show the full claude.ai sign-in URL, not the short one. Use it if the short link fails or a script extracts values from that URL."
  },
  "CLAUDE_CODE_GATEWAY_HINT_HEADERS": {
   "kind": "bool",
@@ -1240,8 +1244,8 @@
   "summary": "On Linux and WSL, whole GiB of available memory below which Claude Code warns. Off if unset, 0 or not plain digits. Ignored when set via settings env."
  },
  "CLAUDE_CODE_WEBFETCH_CACHE_TTL_MS": {
-  "kind": "duration",
-  "summary": "Milliseconds WebFetch caches each fetched URL's response. Default 900000 (15 minutes). Plain digits only. Read once per launch."
+  "kind": "number",
+  "summary": "Sets the cache lifetime for pages fetched by WebFetch, in milliseconds. The default is 900000 (15 minutes); plain digits only, and changes take effect on the next launch."
  },
  "CLAUDE_CODE_WEBFETCH_DEADLINE_MS": {
   "kind": "duration",
