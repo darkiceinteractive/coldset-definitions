@@ -1,6 +1,6 @@
 {
  "format": 1,
- "generated": "2026-11-21T20:55:26Z",
+ "generated": "2026-11-22T21:05:55Z",
  "tools": {
   "claude-code": {
    "docs": {
@@ -745,6 +745,11 @@
      "kind": "bool",
      "name": "CLAUDE_CODE_DISABLE_REFUSAL_FALLBACK",
      "summary": "Set to 1 to stop Claude Code switching models on its own if the safety classifier flags a request. The switchModelsOnFlag setting does likewise."
+    },
+    {
+     "kind": "list",
+     "name": "CLAUDE_CODE_DISABLE_SHELL_HEAD_START",
+     "summary": "Set to 1 to stop startup files running early while Claude composes the first Bash command. Needs v2.1.327 or newer."
     },
     {
      "kind": "bool",

@@ -583,6 +583,10 @@
   "kind": "bool",
   "summary": "Set to 1 to stop Claude Code switching models on its own if the safety classifier flags a request. The switchModelsOnFlag setting does likewise."
  },
+ "CLAUDE_CODE_DISABLE_SHELL_HEAD_START": {
+  "kind": "list",
+  "summary": "Set to 1 to stop startup files running early while Claude composes the first Bash command. Needs v2.1.327 or newer."
+ },
  "CLAUDE_CODE_DISABLE_STRUCTURED_OUTPUTS": {
   "kind": "bool",
   "summary": "Set to 1 to stop sending output_config.format and its beta header, for gateways whose upstream rejects them. Other pre-release features stay on. Needs v2.1.288+."
