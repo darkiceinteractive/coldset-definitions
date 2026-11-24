@@ -65,6 +65,9 @@
  "disableDesktopLocalSessions": {
   "summary": "Disables Desktop Code sessions running on the device, leaving SSH for other hosts and cloud."
  },
+ "disableDirectMcpSkills": {
+  "summary": "Controls access to skills supplied by MCP servers that are not connectors, applying across the whole organisation."
+ },
  "disableRemotePreviewScripts": {
   "summary": "Stops scripts running in the Browser pane HTML previews during SSH and WSL sessions in the desktop app."
  },

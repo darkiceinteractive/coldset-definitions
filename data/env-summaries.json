@@ -524,8 +524,8 @@
   "summary": "Set to 1 to stop Opus 4 plus Opus 4.1 being automatically remapped to the present Opus build via the Anthropic API."
  },
  "CLAUDE_CODE_DISABLE_MCP_TASK_BACKGROUND": {
-  "kind": "bool",
-  "summary": "Set to 1 so Claude waits for an MCP task result in interactive sessions. Automatic backgrounding, if on, still moves it after two minutes by default. Needs v2.1.304+."
+  "kind": "list",
+  "summary": "Set to `1` so Claude waits for MCP task results in an interactive terminal. Automatic backgrounding still shifts calls once two minutes pass by default. Requires v2.1.304 or later."
  },
  "CLAUDE_CODE_DISABLE_MODEL_ACCESS_FALLBACK": {
   "kind": "bool",
@@ -586,6 +586,10 @@
  "CLAUDE_CODE_DISABLE_SHELL_HEAD_START": {
   "kind": "list",
   "summary": "Set to 1 to stop startup files running early while Claude composes the first Bash command. Needs v2.1.327 or newer."
+ },
+ "CLAUDE_CODE_DISABLE_SHIP": {
+  "kind": "list",
+  "summary": "Use `1` to disable both `/ship` and `/steward`. Needs v2.1.331 or later of Claude Code."
  },
  "CLAUDE_CODE_DISABLE_STRUCTURED_OUTPUTS": {
   "kind": "bool",
@@ -844,8 +848,8 @@
   "summary": "Set to 1 to start stdio MCP servers with a safe baseline environment plus the server's own env, rather than inheriting your shell environment."
  },
  "CLAUDE_CODE_MCP_AUTO_BACKGROUND_MS": {
-  "kind": "duration",
-  "summary": "Milliseconds before a long-running MCP tool call shifts to a background task. Default 120000 (2 minutes). 0 disables it, so interactive sessions wait on MCP tasks. Needs v2.1.212+."
+  "kind": "list",
+  "summary": "Time in milliseconds until a busy MCP call is shifted into background. Default `120000` (two minutes). `0` turns this off and, in interactive sessions, makes Claude wait. Needs v2.1.212+."
  },
  "CLAUDE_CODE_MCP_STARTUP_WAIT_MS": {
   "kind": "duration",
@@ -1028,8 +1032,8 @@
   "summary": "Set to 1 to keep interrupted tool calls, marked as cut off, when a turn is auto-continued. Otherwise they're dropped. Some calls, such as subagents, are always dropped."
  },
  "CLAUDE_CODE_RETRY_WATCHDOG": {
-  "kind": "bool",
-  "summary": "Set to 1 for unattended runs so 429 and 529 capacity errors retry indefinitely with backoff up to 5 minutes. Spend-limit 429s still fail at once."
+  "kind": "list",
+  "summary": "Use `1` in unattended sessions so `429` and `529` capacity failures are retried beyond `CLAUDE_CODE_MAX_RETRIES`. Spend limits or exhausted credits can stop retries. Needs v2.1.186+."
  },
  "CLAUDE_CODE_RETRY_WATCHDOG_MAX_WAIT_MS": {
   "kind": "duration",

@@ -1,6 +1,6 @@
 {
  "format": 1,
- "generated": "2026-11-24T02:15:02Z",
+ "generated": "2026-11-24T23:55:48Z",
  "tools": {
   "claude-code": {
    "docs": {
@@ -672,9 +672,9 @@
      "summary": "Set to 1 to stop Opus 4 plus Opus 4.1 being automatically remapped to the present Opus build via the Anthropic API."
     },
     {
-     "kind": "bool",
+     "kind": "list",
      "name": "CLAUDE_CODE_DISABLE_MCP_TASK_BACKGROUND",
-     "summary": "Set to 1 so Claude waits for an MCP task result in interactive sessions. Automatic backgrounding, if on, still moves it after two minutes by default. Needs v2.1.304+."
+     "summary": "Set to `1` so Claude waits for MCP task results in an interactive terminal. Automatic backgrounding still shifts calls once two minutes pass by default. Requires v2.1.304 or later."
     },
     {
      "kind": "bool",
@@ -750,6 +750,11 @@
      "kind": "list",
      "name": "CLAUDE_CODE_DISABLE_SHELL_HEAD_START",
      "summary": "Set to 1 to stop startup files running early while Claude composes the first Bash command. Needs v2.1.327 or newer."
+    },
+    {
+     "kind": "list",
+     "name": "CLAUDE_CODE_DISABLE_SHIP",
+     "summary": "Use `1` to disable both `/ship` and `/steward`. Needs v2.1.331 or later of Claude Code."
     },
     {
      "kind": "bool",
@@ -1074,9 +1079,9 @@
      "summary": "Set to 1 to start stdio MCP servers with a safe baseline environment plus the server's own env, rather than inheriting your shell environment."
     },
     {
-     "kind": "duration",
+     "kind": "list",
      "name": "CLAUDE_CODE_MCP_AUTO_BACKGROUND_MS",
-     "summary": "Milliseconds before a long-running MCP tool call shifts to a background task. Default 120000 (2 minutes). 0 disables it, so interactive sessions wait on MCP tasks. Needs v2.1.212+."
+     "summary": "Time in milliseconds until a busy MCP call is shifted into background. Default `120000` (two minutes). `0` turns this off and, in interactive sessions, makes Claude wait. Needs v2.1.212+."
     },
     {
      "kind": "duration",
@@ -1305,9 +1310,9 @@
      "summary": "Set to 1 to keep interrupted tool calls, marked as cut off, when a turn is auto-continued. Otherwise they're dropped. Some calls, such as subagents, are always dropped."
     },
     {
-     "kind": "bool",
+     "kind": "list",
      "name": "CLAUDE_CODE_RETRY_WATCHDOG",
-     "summary": "Set to 1 for unattended runs so 429 and 529 capacity errors retry indefinitely with backoff up to 5 minutes. Spend-limit 429s still fail at once."
+     "summary": "Use `1` in unattended sessions so `429` and `529` capacity failures are retried beyond `CLAUDE_CODE_MAX_RETRIES`. Spend limits or exhausted credits can stop retries. Needs v2.1.186+."
     },
     {
      "kind": "duration",
@@ -2491,6 +2496,11 @@
       "scope": "Managed",
       "summary": "Disables Desktop Code sessions running on the device, leaving SSH for other hosts and cloud.",
       "topic": "Remote, desktop, and notifications"
+     },
+     "disableDirectMcpSkills": {
+      "scope": "Managed",
+      "summary": "Controls access to skills supplied by MCP servers that are not connectors, applying across the whole organisation.",
+      "topic": "MCP"
      },
      "disableMobileSimulatorTools": {
       "scope": "Managed",
@@ -8671,6 +8681,7 @@
        "allowedMcpServers",
        "deniedMcpServers",
        "disableClaudeAiConnectors",
+       "disableDirectMcpSkills",
        "disabledMcpjsonServers",
        "enableAllProjectMcpServers",
        "enabledMcpjsonServers",
