@@ -745,7 +745,7 @@
  },
  "CLAUDE_CODE_FULL_SIGN_IN_LINK": {
   "kind": "bool",
-  "summary": "Set to 1 to show the full claude.ai sign-in URL, not the short one. Use it if the short link fails or a script extracts values from that URL."
+  "summary": "Setting this to 1 prints the complete sign in address in Claude Code. Use it for short address errors or scripts reading URL values; needs v2.1.330 or newer."
  },
  "CLAUDE_CODE_GATEWAY_HINT_HEADERS": {
   "kind": "bool",

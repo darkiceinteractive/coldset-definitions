@@ -1,6 +1,6 @@
 {
  "format": 1,
- "generated": "2026-11-22T21:05:55Z",
+ "generated": "2026-11-24T02:15:02Z",
  "tools": {
   "claude-code": {
    "docs": {
@@ -950,7 +950,7 @@
     {
      "kind": "bool",
      "name": "CLAUDE_CODE_FULL_SIGN_IN_LINK",
-     "summary": "Set to 1 to show the full claude.ai sign-in URL, not the short one. Use it if the short link fails or a script extracts values from that URL."
+     "summary": "Setting this to 1 prints the complete sign in address in Claude Code. Use it for short address errors or scripts reading URL values; needs v2.1.330 or newer."
     },
     {
      "kind": "bool",
