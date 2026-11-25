@@ -1,6 +1,6 @@
 {
  "format": 1,
- "generated": "2026-11-24T23:55:48Z",
+ "generated": "2026-11-25T23:40:00Z",
  "tools": {
   "claude-code": {
    "docs": {
@@ -395,7 +395,7 @@
     {
      "kind": "bool",
      "name": "CLAUDE_CODE_ARTIFACT_COMMENTS",
-     "summary": "Set to 0 to stop Claude reading and replying to artifact comments. No effect if nonessential traffic is disabled, which turns artifacts off. Needs v2.1.221+."
+     "summary": "Set to 0 so the Artifact tool stops reading and answering artifact comments. Ignored when artifacts are disabled, and needs v2.1.221 or newer."
     },
     {
      "kind": "bool",
@@ -405,7 +405,7 @@
     {
      "kind": "bool",
      "name": "CLAUDE_CODE_ARTIFACT_PUBLISH_EDITS",
-     "summary": "Set to 0 so Claude edits an artifact file with its edit tools and publishes separately, instead of applying small changes during publish. Needs v2.1.300+."
+     "summary": "Set to 0 to prevent Claude applying minor local file changes when publishing an artifact. Needs v2.1.300 or later."
     },
     {
      "kind": "bool",
@@ -745,6 +745,11 @@
      "kind": "bool",
      "name": "CLAUDE_CODE_DISABLE_REFUSAL_FALLBACK",
      "summary": "Set to 1 to stop Claude Code switching models on its own if the safety classifier flags a request. The switchModelsOnFlag setting does likewise."
+    },
+    {
+     "kind": "bool",
+     "name": "CLAUDE_CODE_DISABLE_RESPONSE_COMPRESSION",
+     "summary": "Set to 1 to ask for uncompressed responses if a proxy leaves compressed output incomplete. Skip on self hosted runners and Remote Control; ignored in project/local settings; needs v2.1.331+."
     },
     {
      "kind": "list",
@@ -1698,7 +1703,7 @@
     {
      "kind": "bool",
      "name": "DISABLE_COMPACT",
-     "summary": "Set to 1 to turn off all compaction, both automatic and the manual /compact command."
+     "summary": "Set to 1 to block every compaction route, such as /compact and the rewind menu's summarize items."
     },
     {
      "kind": "bool",
@@ -1965,7 +1970,7 @@
     {
      "kind": "string",
      "name": "OTEL_LOG_RAW_API_BODIES",
-     "summary": "Logs Messages API requests and responses as JSON events. Use 1 for truncated inline bodies, or file:<dir> for complete bodies on disk. Off by default."
+     "summary": "Logs raw request and response JSON; use 1 for inline truncated bodies or file:<dir> for untruncated disk bodies with body_ref. Off by default; no effect in project or local settings."
     },
     {
      "kind": "bool",
